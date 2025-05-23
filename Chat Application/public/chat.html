@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chat Application</title>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1><i class="fa-regular fa-face-smile"></i>Let's Chat</h1>
+            <a href="index.html" class="btn">Leave Room</a>
+        </header>
+        <main class="chat-main">
+            <div class="chat-sidebar">
+                <h3><i class="fa-solid fa-comments"></i>Room Name:</h3>
+                <h2 id="room-name"></h2>
+                <h3><i class="fa-solid fa-users"></i>Users</h3>
+                <ul id="room-users">
+                </ul>
+            </div>
+            <div class="chat-message">
+            </div>
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form" autocomplete="off">
+                <button type="button" class="btn" id="bold-btn"><i class="fa-solid fa-bold"></i></button>
+                <button type="button" class="btn" id="italic-btn"><i class="fa-solid fa-italic"></i></button>
+                <button type="button" class="btn" id="link-btn"><i class="fa-solid fa-link"></i></button>
+                <div id="chat-input" contenteditable="true" data-placeholder="Enter Message..."></div>
+                <span id="Tooltip" style="visibility: hidden;">Please enter a value</span>
+                <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div> 
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

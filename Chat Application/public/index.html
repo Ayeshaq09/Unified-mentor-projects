@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chat Application</title>
+</head>
+<body>
+    <div class="join-container">
+        <header class="join-header">
+            <h1><i class="fa-regular fa-face-smile"></i>Let's Chat</h1>
+        </header>
+        <main class="join-main">
+            <form action="chat.html" id="join-form" method="GET" autocomplete="off">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username"/>
+                    <span id="value-Tooltip" style="visibility: hidden;">Please enter a value</span>
+                    <span id="user-Tooltip" style="visibility: hidden;">Username already exists!</span>
+                </div>
+                <div class="form-control">
+                    <label for="room">Select Room</label>
+                    <select name="room" id="select-room">
+                        <option value="Room 101">Room 101</option>
+                        <option value="Room 102">Room 102</option>
+                        <option value="Room 103">Room 103</option>
+                        <option value="Room 104">Room 104</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Join Room</button>
+                <button type="button" class="btn" id="create-room">Create Room</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

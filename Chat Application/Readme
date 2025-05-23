@@ -1,0 +1,38 @@
+** Chat Application**
+
+This is a simple real-time chat application built with Node.js, Express, and WebSockets.
+
+** Features **
+
+- Real-time chat using WebSockets
+- User-friendly UI
+- Simple and clean design
+
+** Prerequisites **
+
+Make sure you have the following installed:
+
+- node
+- npm
+- express
+- moment
+
+** Getting started **
+
+Follow these steps to clone and run the app locally:
+
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+2. Install dependencies
+```bash
+    npm install
+
+3. Start server
+    node server.js
+
+4. Open the app in your browser
+    Go to: http://localhost:3000
+
