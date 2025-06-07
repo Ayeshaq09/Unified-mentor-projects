@@ -1,0 +1,76 @@
+{
+  "effects":{
+    "Carbon Monoxide Pollution": {
+        "title": "Carbon Monoxide (CO) Pollution",
+        "features":{
+        "description": "A colorless, odorless gas that interferes with the oxygen-carrying capacity of blood.",
+        "health_effects": "Headaches, dizziness, unconsciousness, death (in high concentrations).",
+        "sources": "Incomplete combustion of fossil fuels (vehicles, stoves, furnaces)."
+        }
+    },
+    "Ground-Level Ozone Pollution": {
+        "title": "Ground-Level Ozone Pollution",
+        "features":{
+        "description": "A harmful form of ozone formed when sunlight reacts with pollutants like nitrogen oxides (NOx) and volatile organic compounds (VOCs).",
+        "health_effects": "Asthma, breathing difficulty, throat irritation.",
+        "sources": "Vehicle exhaust, industrial emissions, chemical solvents."
+        }
+    },
+    "Nitrogen Oxides Pollution": {
+        "title": "Nitrogen Oxides (NOx) Pollution",
+        "features":{
+        "description": "A group of gases including NO and NO₂ produced from high-temperature combustion.",
+        "health_effects": "Respiratory issues, smog formation, acid rain.",
+        "sources": "Cars, trucks, power plants."
+        }
+    },
+    "Sulfur Dioxide Pollution": {
+        "title": "Sulfur Dioxide (SO₂) Pollution",
+        "features":{
+        "description": "A pungent, toxic gas primarily from burning fossil fuels.",
+        "health_effects": "Eye irritation, respiratory problems, acid rain.",
+        "sources": "Power plants, industrial processes, volcanoes."
+        }
+    },
+    "Lead Pollution": {
+        "title": "Lead Pollution",
+        "features":{
+        "description": "Heavy metal that was once common in fuel and industrial emissions.",
+        "health_effects": "Brain and nervous system damage, especially in children.",
+        "sources": "Old paints, industrial processes, leaded gasoline (still used in some countries)."
+        }
+    },
+    "Volatile Organic Compounds": {
+        "title": "Volatile Organic Compounds (VOCs)",
+        "features":{
+        "description": "Organic chemicals that easily evaporate and contribute to smog.",
+        "health_effects": "Eye, nose, throat irritation, organ damage, cancer.",
+        "sources": "Paints, cleaning supplies, fuels, industrial processes."
+        }
+    },
+    "Particulate Matter Pollution": {
+        "title": "Particulate Matter Pollution",
+        "features":{
+        "description": "Tiny solid or liquid particles suspended in the air.",
+        "examples": "Dust, soot, smoke, ash, pollen.",
+        "health_effects": "Respiratory problems, heart disease, reduced lung function."
+        }
+    },
+    "Hazardous Air Pollutants": {
+        "title": "Hazardous Air Pollutants (HAPs)",
+        "features":{
+        "description": "Pollutants known to cause serious health effects, including cancer.",
+        "examples": "Benzene, formaldehyde, dioxins.",
+        "sources": "Chemical manufacturing, waste incineration, fuel combustion."
+        }
+    },
+    "Indoor Air Pollution": {
+        "title": "Indoor Air Pollution",
+        "features":{
+        "description": "Pollution within buildings and homes.",
+        "health_effects": "Headaches, allergies, respiratory diseases.",
+        "sources": "Tobacco smoke, cooking stoves, mold, cleaning products."
+        }
+    }
+  }
+}

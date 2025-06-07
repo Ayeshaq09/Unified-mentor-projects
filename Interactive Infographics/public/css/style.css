@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+    --main-color: #4d8abb;
+    --dark-bg: #022f56;
+    --text-color: #095fa5;
+    --section-color: #807c7c24;
+    --range-text-color: #514f4f;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container{
+    margin: 0px auto;
+}
+
+.inner-container{
+    max-width: 900px;
+    margin: 60px auto 0px auto;
+    text-align: center;
+}
+
+.inner-container h1{
+    font-size: 60px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.section:nth-child(even) {
+  background-color: var(--section-color);
+}
+
+/* Graph section */
+
+.graph-section{
+    max-width: 900px;
+    padding: 30px 20px;
+    margin: 0px auto;
+}
+
+.graph {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+#myChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#yearSlider{
+    width: 80%;
+    margin: 20px;
+}
+
+.range-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.range{
+    color: var(--range-text-color);
+}
+
+input[type="range"] {
+  transition: all 0.1s ease-out;
+}
+
+/* Types section */
+.types-section{
+    position: relative;
+    overflow-x: hidden;
+    padding: 40px 0px;
+}
+
+.types-section h2{
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    height: 300px;
+}
+
+.grid-item {
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 247, 255, 0.3);
+}
+
+.item-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.detail-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 448px;
+    background-color: var(--dark-bg);
+    max-width: 100vw;
+    z-index: 10;
+    padding: 30px;
+    transform: translateX(200%);
+    transition: transform 0.7s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.detail-panel.active {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    transition: transform 0.7s ease;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-title {
+    font-weight: 700;
+}
+
+.description, .sources, .examples, .health-effects{
+    color: #fff;
+    border-radius: 5px;
+    max-width: 700px;
+    padding: 20px;
+    margin: 30px auto;
+    background: #4d8abb;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.description:hover, 
+.sources:hover, 
+.examples:hover, 
+.health-effects:hover{
+    transform: translateY(-5px);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s transform, 0.5s box-shadow;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding-bottom: 20px;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* causes section */
+.causes-section{
+    padding-bottom: 30px;
+}
+
+.causes-section h2{
+    margin-bottom: 60px;
+    color: var(--main-color);
+    font-size: 40px;
+    padding-top: 30px;
+}
+
+.cause-item{
+    text-align: center;
+}
+
+.causes-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 70px;
+    column-gap: 30px;
+}
+
+.cause-img{
+    width: 150px;
+    height: 150px;
+}
+
+.cause-text{
+    text-align: center;
+    font-size: 24px;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+/* health effects section */
+.effects-section{
+    padding-bottom: 50px;
+}
+
+.effects-section h2{
+    margin: 30px auto;
+    color: var(--main-color);
+    font-size: 40px;
+}
+
+.body-container{
+    position: relative;
+}
+
+.body-img{
+    width: 400px;
+}
+
+.body-points{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(32, 188, 202);
+    border-radius: 50%;
+}
+
+.head{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+}
+
+.nose{
+    position: absolute;
+    top: 110px;
+    left: 42%;
+}
+
+.eye{
+    position: absolute;
+    top: 75px;
+    left: 43%;
+}
+
+.ear{
+    position: absolute;
+    top: 88px;
+    left: 52%;
+}
+
+.neck{
+    position: absolute;
+    top: 190px;
+    left: 50%;
+}
+
+.mouth{
+    position: absolute;
+    top: 140px;
+    left: 43%;
+}
+
+.shoulder{
+    position: absolute;
+    top: 200px;
+    left: 54%;
+}
+
+.lung{
+    position: absolute;
+    top: 300px;
+    left: 57%;
+}
+
+.chest{
+    position: absolute;
+    top: 300px;
+    left: 39%;
+}
+
+.stomach{
+    position: absolute;
+    top: 380px;
+    left: 53%;
+}
+
+.effects{
+    width: 170px;
+    height: auto;
+    background-color: rgb(21, 186, 200);
+    font-size: 14px;
+    padding: 4px 0px;
+    text-align: center;
+    color: #fff;
+    display: none;
+    transition: 0.4s display;
+}
+
+.head-effect{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+
+.nose-effect{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+.eye-effect{
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
+
+.ear-effect{
+    position: absolute;
+    top: 80px;
+    right: 30px;
+}
+
+.neck-effect{
+    position: absolute;
+    top: 190px;
+    left: 50px;
+}
+
+.mouth-effect{
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+.shoulder-effect{
+    position: absolute;
+    top: 190px;
+    right: 30px;
+}
+
+.lung-effect{
+    position: absolute;
+    top: 290px;
+    right: 30px;
+}
+
+.chest-effect{
+    position: absolute;
+    top: 290px;
+    left: 50px;
+}
+
+.stomach-effect{
+    position: absolute;
+    top: 370px;
+    right: 30px;
+}
+
+line {
+    stroke: #00cccc;
+    stroke-width: 2;
+    marker-end: url(#arrow);
+    display: none;
+    transition: 0.4s display;
+}
+
+ svg.left-connector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+ svg.right-connector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 500px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* prevention section */
+
+.prevention-grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 0px 30px 30px 30px;
+}
+
+.prevention-section h2{
+    margin-bottom: 60px;
+    color: var(--main-color);
+    font-size: 40px;
+    padding-top: 30px;
+}
+
+.round-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: transform .5s;
+}
+
+.img-text{
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+.round-img:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* media queries */
+@media screen and (max-width: 768px){
+    .types-section h2{
+        font-size: 50px;
+    }
+    .section{
+        width: 600px;
+        margin: 0px auto;
+    }
+    .detail-panel{   
+        font-size: 14px;
+        height: 428px; 
+    }
+    .types-section h2,
+    .effects-section h2, .prevention-section h2,
+    .causes-section h2{
+        font-size: 24px;
+    }
+    .cause-img{
+        width: 120px;
+        height: 120px;
+    }
+    .cause-text{
+        text-align: center;
+        font-size: 18px;
+    }
+    .round-img{
+        width: 150px;
+        height: 150px;
+    }
+    .body-img{
+        width: 300px;
+    }
+    .head-effect, .eye-effect, .chest-effect, .neck-effect, .nose-effect{
+        left: 0px;
+    }
+    .head{
+        top: 20px;
+    }
+    .eye{
+        top: 62px;
+    }
+    .ear{
+        top: 70px;
+    }
+    .nose{    
+        top: 80px;
+    }
+    .mouth{
+        top: 100px;
+    }
+    .shoulder{
+        top: 150px;
+    }
+    .neck{
+        top: 140px;
+    }
+    .lung{
+        top: 200px;
+    }
+    .chest{
+        top: 220px;
+    }
+    .stomach{
+        top: 290px;
+    }
+    .head-effect{
+        top: 10px;
+    }
+    .eye-effect{
+        top: 40px;
+    }
+    .ear-effect{
+        top: 60px;
+    }
+    .nose-effect{
+        top: 70px;
+    }
+    .mouth-effect{
+        top: 100px;
+        left: 0px;
+    }
+    .shoulder-effect{
+        top: 140px;
+    }
+    .neck-effect{
+        top: 130px;
+    }
+    .lung-effect{
+        top: 190px;
+    }
+    .chest-effect{
+        top: 200px;
+    }
+    .stomach-effect{
+        top: 280px;
+    }
+}
+
+@media screen and (max-width: 614px){
+    .section{
+        width: 500px;
+        margin: 0px auto;
+    }
+    .graph-section{
+        padding: 0px 20px;
+    }
+    .prevention-grid, .types-grid {
+        grid-template-columns: auto auto;
+    }
+    .effects{
+        font-size: 10px;
+        width: 100px;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    .section{
+        width: 100%;
+    }
+    .inner-container h1 {
+        font-size: 40px;
+    }
+    .types-grid{
+        overflow-y: scroll;
+    }
+    .grid-item{
+        width: 200px;
+        height: 60px;
+        padding: 5px;
+        margin: 0px auto;
+    }
+    .prevention-grid, .types-grid, .causes-grid {
+        grid-template-columns: auto;
+    }
+    .effects-section h2, .prevention-section h2{
+        max-width: 200px;
+    }
+    .prevention-section h2{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .types-section .panel-title{
+        font-size: 16px;
+        max-width: 190px;
+        margin-bottom: 0px;
+    }
+    .types-grid{
+        padding-top: 10px;
+    }
+    .body-points {
+        width: 6px;
+        height: 6px;
+    }
+    .body-img{
+        width: 200px;
+    }
+    .head {
+        top: 10px;
+    }
+    .eye
+    {
+        top: 42px;
+        left: 45%;
+    }
+    .ear {
+        top: 50px;
+    }
+    .nose {
+        top: 55px;
+        left: 43%;
+    }
+    .mouth {
+        top: 70px;
+        left: 44%;
+    }
+    .shoulder {
+        top: 100px;
+    }
+    .neck {
+        top: 95px;
+    }
+    .lung {
+        top: 150px;
+    }
+    .chest {
+        top: 150px;
+        left: 40%;
+    }
+    .stomach {
+        top: 190px;
+    }
+    svg.left-connector{
+        left: 10%;
+        width: 200px;
+        height: 250px;
+    } 
+    svg.right-connector{
+        right: 10%;
+        width: 200px;
+        height: 250px;
+    } 
+    line{
+        stroke-width: 1;
+    }
+    .description, .sources, .examples, .health-effects {
+        padding: 15px;
+        font-size: 13px;
+    }
+    .effects{
+        font-size: 6px;
+        width: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .chest-effect {
+        top: 160px;
+    }
+    .ear-effect{
+        top: 40px;
+    }
+    .shoulder-effect{
+        top: 90px;
+    }
+    .lung-effect {
+        top: 130px;
+    }
+    .stomach-effect{
+        top: 180px;
+    }
+}

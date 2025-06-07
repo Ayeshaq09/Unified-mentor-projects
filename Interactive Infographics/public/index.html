@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Interactive Infographics</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <h1>Air Pollution Infographics</h1>
+            <!-- graph section -->
+            <div class="section graph-section">
+                <div class="graph">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="range-container">
+                    <i class="bi bi-play-fill" id="play"></i><label for="yearSlider" id="selectedYear" class="range">1990</label>
+                    <input type="range" id="yearSlider" min="1990" max="2025" value="1990" step="1" />
+                    <label for="yearSlider" id="EndYear" class="range">2025</label>
+                </div>
+            </div>
+
+            <!-- types of air pollution section -->
+            <div class="section types-section">
+                <h2>Types Of Air Pollution</h2>
+                <div class="types-grid">
+                    <div class="grid-item" pollution-type="Particulate Matter Pollution">
+                        <h3 class="item-title">Particulate Matter Pollution</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Ground-Level Ozone Pollution">
+                        <h3 class="item-title">Ground-Level Ozone (O<sub>3</sub>) Pollution</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Carbon Monoxide Pollution">
+                        <h3 class="item-title">Carbon Monoxide (CO) Pollution</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Sulfur Dioxide Pollution">
+                        <h3 class="item-title">Sulfur Dioxide (SO<sub>2</sub>) Pollution</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Nitrogen Oxides Pollution">
+                        <h3 class="item-title">Nitrogen Oxides (NOx) Pollution</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Lead Pollution">
+                        <h3 class="item-title">Lead Pollution</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Volatile Organic Compounds">
+                        <h3 class="item-title">Volatile Organic Compounds (VOCs)</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Hazardous Air Pollutants">
+                        <h3 class="item-title">Hazardous Air Pollutants</h3>
+                    </div>
+                    <div class="grid-item" pollution-type="Indoor Air Pollution">
+                        <h3 class="item-title">Indoor Air Pollution</h3>
+                    </div>
+                </div>
+
+                <!-- section to display details regarding the type of air pollution -->
+                <div class="detail-panel" id="detailPanel">
+                    <div class="panel-header">
+                        <h2 class="panel-title" id="panelTitle">Technology</h2>
+                        <button class="close-btn" id="closePanel">×</button>
+                    </div>
+                    <div class="panel-content" id="panelContent"></div>
+                </div>
+            </div>
+
+            <!-- causes of air pollution section -->
+            <div class="section causes-section">
+                <h2>Causes Of Air Pollution</h2>
+                <div class="causes-grid">
+                    <div class="cause-item">
+                        <img src="images/broom.png" class="cause-img"/>
+                        <p class="cause-text">Dust</p>
+                    </div>
+                    <div class="cause-item">
+                        <img src="images/food-waste.png" class="cause-img"/>
+                        <p class="cause-text">Waste Management</p>
+                    </div>
+                    <div class="cause-item">
+                        <img src="images/transportation.png" class="cause-img"/>
+                        <p class="cause-text">Transport</p>
+                    </div>
+                    <div class="cause-item">
+                        <img src="images/industrial.png" class="cause-img"/>
+                        <p class="cause-text">Industry</p>
+                    </div>
+                    <div class="cause-item">
+                        <img src="images/fireplace.png" class="cause-img"/>
+                        <p class="cause-text">Household Energy</p>
+                    </div>
+                    <div class="cause-item">
+                        <img src="images/agriculture.png" class="cause-img"/>
+                        <p class="cause-text">Agricultural Practices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- health effects of air pollution section -->
+            <div class="section effects-section">
+                <h2>Health Effects Of Air Pollution</h2>
+                <div class="body-container">
+                    <img src="images/body.png" class="body-img"/>
+
+                    <div class="body-points head" onClick="displayEffects('head-effect', 'head-arrow')"></div>
+                    <div class="body-points eye" onClick="displayEffects('eye-effect', 'eye-arrow')"></div>
+                    <div class="body-points ear" onClick="displayEffects('ear-effect', 'ear-arrow')"></div>
+                    <div class="body-points nose" onClick="displayEffects('nose-effect', 'nose-arrow')"></div>
+                    <div class="body-points mouth" onClick="displayEffects('mouth-effect', 'mouth-arrow')"></div>
+                    <div class="body-points shoulder" onClick="displayEffects('shoulder-effect', 'shoulder-arrow')"></div>
+                    <div class="body-points neck" onClick="displayEffects('neck-effect', 'neck-arrow')"></div>
+                    <div class="body-points lung" onClick="displayEffects('lung-effect', 'lung-arrow')"></div>
+                    <div class="body-points chest" onClick="displayEffects('chest-effect', 'chest-arrow')"></div>
+                    <div class="body-points stomach" onClick="displayEffects('stomach-effect', 'stomach-arrow')"></div>
+
+                    <div class="effects head-effect">Dizziness, headaches</div>
+                    <div class="effects eye-effect">Watery eyes, redness</div>
+                    <div class="effects ear-effect">Ear infections hearing loss</div>
+                    <div class="effects nose-effect">Sneezing, nosebleeds</div>
+                    <div class="effects mouth-effect">Nausea, vomiting</div>
+                    <div class="effects shoulder-effect">Fever, chills</div>
+                    <div class="effects neck-effect">Coughing, throat irritation</div>
+                    <div class="effects lung-effect">Asthma, nose cancer</div>
+                    <div class="effects chest-effect">Chest pain, lung tissue swelling</div>
+                    <div class="effects stomach-effect">Muscle pain, rashes</div>
+
+                    <svg class="left-connector">
+                        <defs>
+                        <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L6,3 L0,6 Z" fill="#00cccc" />
+                        </marker>
+                        </defs>
+                        <line x1="220" y1="110" x2="340" y2="113" class="nose-arrow"/>
+                        <line x1="220" y1="140" x2="346" y2="146" class="mouth-arrow"/>
+                        <line x1="220" y1="200" x2="400" y2="196" class="neck-arrow"/>
+                        <line x1="220" y1="300" x2="315" y2="302" class="chest-arrow"/>
+                        <line x1="220" y1="40" x2="405" y2="37" class="head-arrow"/>
+                        <line x1="220" y1="70" x2="345" y2="80" class="eye-arrow"/>
+                    </svg>
+
+                    <svg class="right-connector">
+                        <defs>
+                        <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L6,3 L0,6 Z" fill="#00cccc" />
+                        </marker>
+                        </defs>
+                        <line x1="200" y1="305" x2="60" y2="305" class="lung-arrow"/>
+                        <line x1="200" y1="380" x2="30" y2="385" class="stomach-arrow"/>
+                        <line x1="200" y1="200" x2="32" y2="205" class="shoulder-arrow"/>
+                        <line x1="200" y1="93" x2="20" y2="93" class="ear-arrow"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- ways to prevent air pollution section -->
+            <div class="section prevention-section">
+                <h2>Ways To Prevent Air Pollution</h2>
+                <div class="prevention-grid">
+                    <div>
+                        <img src="images/masks.png" class="round-img"/>
+                        <p class="img-text">Use air masks to keep out dust, pollutants, bacteria and viruses.</p>
+                    </div>
+                    <div>
+                        <img src="images/plants.png" class="round-img"/>
+                        <p class="img-text">Keep indoor plants that help purify the air.</p>
+                    </div>
+                    <div>
+                        <img src="images/purifiers.png" class="round-img"/>
+                        <p class="img-text">Use air purifiers to help everyone breathe and sleep better.</p>
+                    </div>
+                    <div>
+                        <img src="images/avoid_trips.png" class="round-img"/>
+                        <p class="img-text">Try to club activities together to avoid multiple trips to the city.</p>
+                    </div>
+                    <div>
+                        <img src="images/stay_home.png" class="round-img"/>
+                        <p class="img-text">Stay indoors as far as possible.</p>
+                    </div>
+                    <div>
+                        <img src="images/garbage.png" class="round-img"/>
+                        <p class="img-text">Don't burn garbage use sustainable waste management.</p>
+                    </div>
+                    <div>
+                        <img src="images/water.png" class="round-img"/>
+                        <p class="img-text">Drink plenty of fluids to flush out toxins.</p>
+                    </div>
+                    <div>
+                        <img src="images/food.png" class="round-img"/>
+                        <p class="img-text">Eat the right foods that help to boost our immune systems.</p>
+                    </div>
+                    <div>
+                        <img src="images/curtains.png" class="round-img"/>
+                        <p class="img-text">Use heavy curtains and keep the polluted air from entering your homes.</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- cdn for Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

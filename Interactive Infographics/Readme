@@ -1,0 +1,39 @@
+**Air Pollution Infographics**
+
+This project presents interactive infographics on global air pollution using line chart and images.
+
+**Features**
+
+Interactive charts, imagess and sliders for exploring data.
+
+Mobile-responsive, clean design.
+
+**Technologies Used**
+
+HTML5, CSS3, JavaScript
+
+Chart.js for the graph
+
+JSON dataset
+
+**Setup Instructions**
+
+Clone the repository:
+
+git clone https://github.com/yourusername/air-pollution-infographics.git
+
+Run 'npx http-server' in vscode terminal to start the server and open the "Available on" links mentioned, eg:- http://192.168.1.33:8080
+
+**How to use the project**
+The first section shows "World air pollution line chart" that display deaths due to 4 different types of air pollution over the years (1990-2025). Hover over the lines to see the tooltip. It also has a slider to navigate through the years. When you reach the year 2025 on the slider, the line graph changes to horizontal bar graph that has a tooltip (hover over the bars) and displays average of the air pollution over years.
+You can also click play button to see the animation for the graph.
+
+The next section displays "types of air pollution". Hover and click to reveal more details about each. Hover over the detail section as well for the simple transition effect.
+
+The third section displays "Causes of air pollution".
+
+The fourth section displays "Health effects of air pollution". Click over the points to reveal the health effect corresponding to the respective body organ due to air pollution.
+
+The last section displays "Ways to prevent air pollution". Hover over the images for the simple transition effect.
+
+Resize the screen to check the responsiveness of the application.

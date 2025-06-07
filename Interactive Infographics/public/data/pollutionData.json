@@ -1,0 +1,220 @@
+{
+  "World": {
+    "1990": {
+      "Air pollution (total)": 185.4,
+      "Outdoor particulate matter": 115.8,
+      "Indoor air pollution": 66.9,
+      "Outdoor ozone pollution": 6.8
+    },
+    "1991": {
+      "Air pollution (total)": 183.4,
+      "Outdoor particulate matter": 114.6,
+      "Indoor air pollution": 66.2,
+      "Outdoor ozone pollution": 6.7
+    },
+    "1992": {
+      "Air pollution (total)": 182.6,
+      "Outdoor particulate matter": 114.0,
+      "Indoor air pollution": 66.0,
+      "Outdoor ozone pollution": 6.8
+    },
+    "1993": {
+      "Air pollution (total)": 182.3,
+      "Outdoor particulate matter": 112.8,
+      "Indoor air pollution": 66.9,
+      "Outdoor ozone pollution": 6.9
+    },
+    "1994": {
+      "Air pollution (total)": 181.4,
+      "Outdoor particulate matter": 111.7,
+      "Indoor air pollution": 66.9,
+      "Outdoor ozone pollution": 7.1
+    },
+    "1995": {
+      "Air pollution (total)": 180.0,
+      "Outdoor particulate matter": 110.8,
+      "Indoor air pollution": 66.3,
+      "Outdoor ozone pollution": 7.3
+    },
+    "1996": {
+      "Air pollution (total)": 176.6,
+      "Outdoor particulate matter": 108.6,
+      "Indoor air pollution": 65.2,
+      "Outdoor ozone pollution": 7.2
+    },
+    "1997": {
+      "Air pollution (total)": 173.2,
+      "Outdoor particulate matter": 106.1,
+      "Indoor air pollution": 64.2,
+      "Outdoor ozone pollution": 7.4
+    },
+    "1998": {
+      "Air pollution (total)": 170.6,
+      "Outdoor particulate matter": 103.9,
+      "Indoor air pollution": 63.8,
+      "Outdoor ozone pollution": 7.3
+    },
+    "1999": {
+      "Air pollution (total)": 167.7,
+      "Outdoor particulate matter": 101.0,
+      "Indoor air pollution": 63.8,
+      "Outdoor ozone pollution": 7.5
+    },
+    "2000": {
+      "Air pollution (total)": 165.5,
+      "Outdoor particulate matter": 99.1,
+      "Indoor air pollution": 63.5,
+      "Outdoor ozone pollution": 7.1
+    },
+    "2001": {
+      "Air pollution (total)": 163.2,
+      "Outdoor particulate matter": 97.0,
+      "Indoor air pollution": 63.2,
+      "Outdoor ozone pollution": 7.1
+    },
+    "2002": {
+      "Air pollution (total)": 160.5,
+      "Outdoor particulate matter": 94.4,
+      "Indoor air pollution": 63.2,
+      "Outdoor ozone pollution": 6.9
+    },
+    "2003": {
+      "Air pollution (total)": 159.0,
+      "Outdoor particulate matter": 92.4,
+      "Indoor air pollution": 63.6,
+      "Outdoor ozone pollution": 7.1
+    },
+    "2004": {
+      "Air pollution (total)": 155.7,
+      "Outdoor particulate matter": 89.6,
+      "Indoor air pollution": 63.2,
+      "Outdoor ozone pollution": 7.3
+    },
+    "2005": {
+      "Air pollution (total)": 151.3,
+      "Outdoor particulate matter": 85.8,
+      "Indoor air pollution": 62.6,
+      "Outdoor ozone pollution": 7.1
+    },
+    "2006": {
+      "Air pollution (total)": 144.6,
+      "Outdoor particulate matter": 81.0,
+      "Indoor air pollution": 60.5,
+      "Outdoor ozone pollution": 7.1
+    },
+    "2007": {
+      "Air pollution (total)": 140.6,
+      "Outdoor particulate matter": 77.6,
+      "Indoor air pollution": 59.9,
+      "Outdoor ozone pollution": 7.3
+    },
+    "2008": {
+      "Air pollution (total)": 137.7,
+      "Outdoor particulate matter": 74.6,
+      "Indoor air pollution": 60.0,
+      "Outdoor ozone pollution": 7.4
+    },
+    "2009": {
+      "Air pollution (total)": 133.9,
+      "Outdoor particulate matter": 71.0,
+      "Indoor air pollution": 60.0,
+      "Outdoor ozone pollution": 6.8
+    },
+    "2010": {
+      "Air pollution (total)": 131.3,
+      "Outdoor particulate matter": 68.1,
+      "Indoor air pollution": 60.2,
+      "Outdoor ozone pollution": 6.6
+    },
+    "2011": {
+      "Air pollution (total)": 128.4,
+      "Outdoor particulate matter": 64.5,
+      "Indoor air pollution": 60.8,
+      "Outdoor ozone pollution": 6.5
+    },
+    "2012": {
+      "Air pollution (total)": 125.0,
+      "Outdoor particulate matter": 62.2,
+      "Indoor air pollution": 60.0,
+      "Outdoor ozone pollution": 6.2
+    },
+    "2013": {
+      "Air pollution (total)": 123.2,
+      "Outdoor particulate matter": 64.5,
+      "Indoor air pollution": 56.2,
+      "Outdoor ozone pollution": 6.1
+    },
+    "2014": {
+      "Air pollution (total)": 120.9,
+      "Outdoor particulate matter": 66.0,
+      "Indoor air pollution": 52.6,
+      "Outdoor ozone pollution": 5.9
+    },
+    "2015": {
+      "Air pollution (total)": 117.5,
+      "Outdoor particulate matter": 65.9,
+      "Indoor air pollution": 48.9,
+      "Outdoor ozone pollution": 6.0
+    },
+    "2016": {
+      "Air pollution (total)": 114.3,
+      "Outdoor particulate matter": 64.7,
+      "Indoor air pollution": 46.2,
+      "Outdoor ozone pollution": 6.2
+    },
+    "2017": {
+      "Air pollution (total)": 110.2,
+      "Outdoor particulate matter": 62.6,
+      "Indoor air pollution": 44.0,
+      "Outdoor ozone pollution": 6.3
+    },
+    "2018": {
+      "Air pollution (total)": 106.3,
+      "Outdoor particulate matter": 60.7,
+      "Indoor air pollution": 42.2,
+      "Outdoor ozone pollution": 6.0
+    },
+    "2019": {
+      "Air pollution (total)": 102.7,
+      "Outdoor particulate matter": 59.0,
+      "Indoor air pollution": 40.7,
+      "Outdoor ozone pollution": 6.0
+    },
+    "2020": {
+      "Air pollution (total)": 97.3,
+      "Outdoor particulate matter": 55.4,
+      "Indoor air pollution": 38.8,
+      "Outdoor ozone pollution": 5.9
+    },
+    "2021": {
+      "Air pollution (total)": 99.7,
+      "Outdoor particulate matter": 57.6,
+      "Indoor air pollution": 39.1,
+      "Outdoor ozone pollution": 5.9
+    },
+     "2022": {
+      "Air pollution (total)": 99.7,
+      "Outdoor particulate matter": 58.6,
+      "Indoor air pollution": 39.4,
+      "Outdoor ozone pollution": 5.9
+    },
+     "2023": {
+      "Air pollution (total)": 99.8,
+      "Outdoor particulate matter": 57.6,
+      "Indoor air pollution": 39.9,
+      "Outdoor ozone pollution": 5.7
+    },
+     "2024": {
+      "Air pollution (total)": 99.9,
+      "Outdoor particulate matter": 58.8,
+      "Indoor air pollution": 40.1,
+      "Outdoor ozone pollution": 5.4
+    },
+     "2025": {
+      "Air pollution (total)": 99.9,
+      "Outdoor particulate matter": 59.3,
+      "Indoor air pollution": 40.4,
+      "Outdoor ozone pollution": 5.5
+    }
+  }
+}
