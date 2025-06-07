@@ -1,14 +1,14 @@
-** Chat Application**
+**Chat Application**
 
 This is a simple real-time chat application built with Node.js, Express, and WebSockets.
 
-** Features **
+**Features**
 
 - Real-time chat using WebSockets
 - User-friendly UI
 - Simple and clean design
 
-** Prerequisites **
+**Prerequisites**
 
 Make sure you have the following installed:
 
@@ -17,7 +17,7 @@ Make sure you have the following installed:
 - express
 - moment
 
-** Getting started **
+**Setup Instructions**
 
 Follow these steps to clone and run the app locally:
 
@@ -33,3 +33,25 @@ Follow these steps to clone and run the app locally:
 4. Open the app in your browser
     Go to: http://localhost:3000
 
+**How to use the application**
+The first page displays form to add the username, select the room and then join the room.
+You can also create your room using Create room button.
+
+You cannot add same username, username has to be unique.
+
+After joinig the room it opens another page where on the left you can see the users in the particular room
+and the room name.
+On right is the chat panel where you can send messages to other users and also few chat formatting options are available.
+
+The message sent by you will appear right and other user's messages will appear on left with the time and username details.
+
+Also you will get the notifications in the chat panel when user leaves or joins the particular room.
+
+To check the functionality, enter this url - http://localhost:3000 in multiple tabs of the browser.
+Enter different username in each tab to act as differnt users and join the rooms. 
+
+Things to check - try entering same username, select same rooms for multiple user functionality, check message alignment when sent by you and others, 
+create rooms, use the that room name and join using other username to check for active users in the particular room, 
+join and leave the room to check for notifications in chat panel and also check the active users when users leave and join the rooms.
+
+Also check for the responsiveness of the application.
