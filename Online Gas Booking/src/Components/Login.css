@@ -1,0 +1,68 @@
+
+.loginform-container{
+    /* width:"300px" !important; */
+}
+
+.login-heading{
+    color: var(--text-color);
+    font-size: 40px;
+    text-align: center;
+}
+
+.login-input{
+    margin-top: 20px;
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 3px 10px;
+    color: var(--text-color);
+    font-size: 15px;
+    outline: none;
+    border: 2px solid var(--boxshadow-color) ;
+}
+
+.login-input:focus{
+    border-color: var(--darkgray-color1);
+}
+
+.user-icon-container{
+    text-align: center;
+}
+
+.bi-person-circle{
+    font-size: 50px;
+    color: var(--darkgray-color1);
+}
+
+.bi-eye, .bi-person, .bi-eye-slash{
+    margin-left: -30px;
+    color: var(--darkgray-color1);
+}
+
+.login-btn{
+    margin-top: 20px;
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: var(--text-color);
+    color: var(--text-color1);
+    border: none;
+}
+
+.login-btn:hover{
+    background-color: var(--hover-color);
+}
+
+.register-para{
+    margin-top: 15px;
+    color: var(--darkgray-color1);
+}
+
+.register-link{
+    text-decoration: underline;
+    color: var(--text-color);
+    cursor: pointer;
+}
