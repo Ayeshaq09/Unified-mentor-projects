@@ -163,30 +163,59 @@ i{
 /* media queries */
 
 @media screen and (max-width: 425px){
+
     .search-container{
         width: 300px;
         top: 50px;
     }
+
     .search-btn{
         font-size: 12px;
         padding: 0px 7px;
         margin: 10px 0px 0px 0px;
     }
+
     i{
         font-size: 12px;
     }
+
     .display-name{
         font-size: 12px;
     }
+
     .name{
         font-size: 15px;
     }
+
     .filterOption-container{
         font-size: 14px;
     }
+
     #results{
         width: 280px;
-        left: 60%;
-        transform: translate(-59%, 50px);
+        left: 53%;
+        transform: translate(-53%, 50px);
+    }
+
+    .leaflet-popup{
+        width: 250px;
+    }
+
+    .name{
+        font-size: 14px;
+        width: 210px;
+    }
+
+    .display-name{
+        width: 210px;
+    }
+
+    .description{
+        font-size: 12px;
+        width: 210px;
+    }
+
+    .location-img{
+        width: 210px;
     }
 }
