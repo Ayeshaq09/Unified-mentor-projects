@@ -1,0 +1,75 @@
+.sidenavbar {
+  box-shadow: inset -1px 1px 8px var(--box-shadow-color1);
+  height: calc(100vh - 50px);
+  width: 50px;
+  overflow: hidden;
+  transition: 0.3s ease width;
+  padding: 20px 10px;
+}
+
+h2 {
+  position: relative;
+}
+
+.sidenavbar:hover {
+  width: 200px;
+}
+
+.category-separator {
+  width: 100%;
+  /* margin-left: 10px; */
+  background: var(--text-color);
+  height: 3px;
+  /* opacity: 1; */
+  left: 0;
+  position: absolute;
+  top: 15px;
+  /* transition: all 0.3s ease; */
+  transform: scaleX(1);
+  transform-origin: right;
+  transition-duration: 0.2s;
+}
+
+.sidenavbar:hover .category-title {
+  opacity: 1;
+}
+
+.sidenavbar:hover .category-separator {
+  transform: scaleX(0);
+  transition-delay: 0s;
+}
+
+.category-title {
+  color: var(--text-color);
+  padding: 5px 0px 8px 0px;
+  opacity: 0;
+  transition: 0.3s ease opacity;
+  font-size: 20px;
+}
+
+.category-item {
+  color: var(--text-color);
+  padding: 7px 10px;
+  list-style: none;
+  width: 180px;
+  margin-bottom: 5px;
+}
+
+.category-item:hover {
+  background-color: rgba(236, 219, 224, 1);
+}
+
+.active {
+  background-color: rgba(236, 219, 224, 1);
+}
+
+.sidenav-icon{
+  margin-right: 16px;
+}
+
+.category-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+}

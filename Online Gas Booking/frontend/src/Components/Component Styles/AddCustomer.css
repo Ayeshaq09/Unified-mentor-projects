@@ -1,0 +1,19 @@
+.addCustomer-container{
+    text-align: center;
+    width: 700px;
+}
+
+.cust-input{
+    width: 60%;
+}
+
+.form-btns{
+    width: 50%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addcustomer-btn{
+    width: 49%;
+}

@@ -1,0 +1,33 @@
+.login-heading{
+    color: var(--text-color);
+    font-size: 40px;
+    text-align: center;
+}
+
+.login-input{
+    width: 90%;
+}
+
+.user-icon-container{
+    text-align: center;
+}
+
+.bi-person-circle{
+    font-size: 50px;
+    color: var(--darkgray-color1);
+}
+
+.login-btn{
+    width: 90%;
+}
+
+.register-para{
+    margin-top: 15px;
+    color: var(--darkgray-color1);
+}
+
+.register-link{
+    text-decoration: underline;
+    color: var(--text-color);
+    cursor: pointer;
+}
