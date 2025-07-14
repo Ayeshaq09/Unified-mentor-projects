@@ -11,6 +11,7 @@ const Search = (props) => {
     setSearchStatus,
     searchBookings,
     searchCustomers,
+    searchUserBookings,
   } = props;
 
   const [searchValues, setSearchValues] = useState({
@@ -41,14 +42,14 @@ const Search = (props) => {
 
   return (
     <div className={`search-container ${searchCustomers ? 'search-customers':''}`}>
-      <input
+      {!searchUserBookings && <input
         type="text"
         name="name"
         placeholder="Enter customer name"
         className="input searchName-input"
         value={searchValues.name}
         onChange={onChange}
-      />
+      />}
       {searchBookings && (
         <>
           <select

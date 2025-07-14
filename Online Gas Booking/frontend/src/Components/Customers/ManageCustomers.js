@@ -19,6 +19,7 @@ const ManageCustomers = () => {
 
   useEffect(() => {
     const filteredUser = [...users].filter((user) => {
+      if (!user || !user.name) return false;
       const userName = searchName
         ? user.name.toLowerCase().includes(searchName.toLowerCase())
         : true;

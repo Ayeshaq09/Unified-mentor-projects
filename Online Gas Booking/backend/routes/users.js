@@ -3,7 +3,7 @@ const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const db = require("../firebaseDb");
 const fetchUser = require("../middleware/fetchUser");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 
 router.get("/getusers", fetchUser, async (req, res) => {
   let success = false;
@@ -18,7 +18,21 @@ router.get("/getusers", fetchUser, async (req, res) => {
       let name = childSnapshot.val().name;
       let email = childSnapshot.val().email;
       let role = childSnapshot.val().role;
-      if (role === "user") users.push({ key, name, email, role });
+      let date = new Date(childSnapshot.val().date).toLocaleDateString();
+      let totalBarrels = childSnapshot.val().totalBarrels;
+      let totalBarrelsStartDate = childSnapshot.val().totalBarrelsStartDate;
+      let totalBarrelsEndDate = childSnapshot.val().totalBarrelsEndDate;
+      if (role === "user")
+        users.push({
+          key,
+          name,
+          email,
+          role,
+          date,
+          totalBarrels,
+          totalBarrelsStartDate,
+          totalBarrelsEndDate,
+        });
     });
 
     if (users.length > 0) {
@@ -57,38 +71,7 @@ router.get("/getuser", fetchUser, async (req, res) => {
       success = true;
       return res.json({
         success,
-        user,
-      });
-    } else {
-      return res
-        .status(500)
-        .json({ success, error: "There are no users to fetch" });
-    }
-  } catch (error) {
-    success = false;
-    return res.status(500).json({ success, error: error.message });
-  }
-});
-
-router.get("/getadmin", fetchUser, async (req, res) => {
-  let success = false;
-
-  try {
-    const usersRef = db.ref(`Users`);
-    const snapshot = await usersRef.once("value");
-
-     let user = [];
-    snapshot.forEach((childSnapshot) => {
-      let key = childSnapshot.key;
-      let email = childSnapshot.val().email;
-      let role = childSnapshot.val().role;
-      if (role === "admin") user.push({ key, email, role });
-    });
-
-    if (user.length > 0) {
-      success = true;
-      return res.json({
-        success,
+        userId,
         user,
       });
     } else {
@@ -142,8 +125,20 @@ router.post(
         });
       }
 
+      let currentDate = new Date();
+      let EndDate = new Date(currentDate);
+      EndDate.setFullYear(EndDate.getFullYear() + 1);
       const newUserRef = await usersRef.push();
-      await newUserRef.set({ name, email, password, role:"user", date: new Date().toISOString() });
+      await newUserRef.set({
+        name,
+        email,
+        password,
+        role: "user",
+        date: new Date().toISOString(),
+        totalBarrels: 12,
+        totalBarrelsStartDate: currentDate.toISOString(),
+        totalBarrelsEndDate: EndDate.toISOString(),
+      });
 
       success = true;
       return res.json({
@@ -152,8 +147,11 @@ router.post(
           id: newUserRef.key,
           name,
           email,
-          role:"user",
-          date: new Date().toISOString()
+          role: "user",
+          date: new Date().toISOString(),
+          totalBarrels: 12,
+          totalBarrelsStartDate: currentDate.toISOString(),
+          totalBarrelsEndDate: EndDate.toISOString(),
         },
       });
     } catch (error) {
@@ -216,6 +214,17 @@ router.delete("/deleteuser/:id", fetchUser, async (req, res) => {
       success = false;
       return res.status(404).json({ success, error: "User not found" });
     }
+
+    const bookingsRef = db.ref(`Bookings`);
+    const bookingSnapshot = await bookingsRef.once("value");
+
+    bookingSnapshot.forEach((childSnapshot) => {
+      if (childSnapshot.val().user === userId) {
+        bookingId = childSnapshot.key;
+        let childRef = db.ref(`Bookings/${bookingId}`);
+        childRef.remove();
+      }
+    });
 
     await usersRef.remove();
     success = true;

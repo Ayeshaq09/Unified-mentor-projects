@@ -125,7 +125,7 @@ const BookingState = (props) => {
           "auth-token": localStorage.getItem("authToken"),
         },
         body: JSON.stringify({
-          status
+          status,
         }),
       });
 
@@ -138,13 +138,48 @@ const BookingState = (props) => {
             break;
           }
         }
-        // const updatedBookings = bookings.map(booking => 
+        // const updatedBookings = bookings.map(booking =>
         //   booking.key === key ? { ...booking, status } : booking
         // );
 
         setBookings(newBookings);
       } else {
         console.log("error");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const updateTotalBarrels = async (barrels) => {
+    const url = `${host}/booking/updatebarrel`;
+
+    try {
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("authToken"),
+        },
+        body: JSON.stringify({
+          barrels,
+        }),
+      });
+
+      const json = await response.json();
+      if (json.success) {
+        const totalBarrels = json.booking;
+        console.log("totalBarrels updated");
+        return {
+          result: true,
+          totalBarrels,
+        };
+      } else {
+        console.log("error");
+        return {
+          result: false,
+          error: json.error,
+        };
       }
     } catch (error) {
       console.error(error.message);
@@ -164,7 +199,44 @@ const BookingState = (props) => {
 
       const json = await response.json();
       if (json.success) {
-        setBookings(bookings.filter(item => item.key !== id));
+        setBookings(bookings.filter((item) => item.key !== id));
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const sendEmail = async (
+    toName,
+    toEmail,
+    bookingStatus,
+    fromName,
+    fromEmail,
+    subject
+  ) => {
+    const url = `${host}/booking/sendemail`;
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("authToken"),
+        },
+        body: JSON.stringify({
+          toName,
+          toEmail,
+          bookingStatus,
+          fromName,
+          fromEmail,
+          subject,
+        }),
+      });
+
+      const json = await response.json();
+      if (json.success) {
+        console.log(json.mailSent);
       } else {
         console.log("error");
       }
@@ -182,7 +254,9 @@ const BookingState = (props) => {
         addBooking,
         updateBooking,
         updateBookingStatus,
+        updateTotalBarrels,
         deleteBooking,
+        sendEmail,
       }}
     >
       {props.children}

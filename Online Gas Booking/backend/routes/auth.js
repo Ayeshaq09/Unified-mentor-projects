@@ -43,8 +43,21 @@ router.post(
         });
       }
 
+      const currentDate = new Date();
+      const EndDate = new Date(currentDate);
+      EndDate.setFullYear(EndDate.getFullYear() + 1);
+
       const newUsersRef = await usersRef.push();
-      await newUsersRef.set({ name, email, password, role: "user", date: new Date().toISOString() });
+      await newUsersRef.set({
+        name,
+        email,
+        password,
+        role: "user",
+        date: new Date().toISOString(),
+        totalBarrels: 12,
+        totalBarrelsStartDate: currentDate.toISOString(),
+        totalBarrelsEndDate: EndDate.toISOString(),
+      });
 
       const data = {
         user: {
@@ -78,7 +91,7 @@ router.post(
     let success = false;
 
     const { email, password } = req.body;
-    
+
     const result = validationResult(req);
     if (!result.isEmpty()) {
       success = false;
@@ -127,7 +140,7 @@ router.post(
       return res.json({
         success,
         authToken,
-        role
+        role,
       });
     } catch (error) {
       success = false;

@@ -79,6 +79,26 @@ const SideNavbar = () => {
         </>
       )}
 
+      {role === "admin" && (
+        <>
+          <h2>
+            <span className="category-title">Settings</span>
+            <div className="category-separator"></div>
+          </h2>
+          <li
+            className={`category-item ${
+              isItemActive === "Settings" ? "active" : ""
+            }`}
+            onClick={() => handleClick("Settings")}
+          >
+            <Link to="/settings" className="category-link">
+              <i className="fa-solid fa-gear sidenav-icon"></i>
+              <p>Settings</p>
+            </Link>
+          </li>
+        </>
+      )}
+
       {role === "user" && (
         <>
           <h2>

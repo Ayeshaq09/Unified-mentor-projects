@@ -2,17 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import BookingContext from "../../context/BookingContext";
 import { toast } from "react-toastify";
 import "../Component Styles/ManageBookings.css";
-import UserContext from "../../context/UserContext";
-import SendEmail from "../SendEmail";
 import Search from "../Search";
+import SettingContext from "../../context/SettingContext";
 
 const ManageBookings = () => {
   const bookingsContext = useContext(BookingContext);
-  const { bookings, fetchBookings, updateBookingStatus } = bookingsContext;
+  const { bookings, fetchBookings, updateBookingStatus, sendEmail } =
+    bookingsContext;
   const [sortedBooking, setSortedBooking] = useState([]);
   const [filteredBooking, setFilteredBooking] = useState([]);
-  const adminContext = useContext(UserContext);
-  const { fetchAdmin } = adminContext;
+  const settingsContext = useContext(SettingContext);
+  const { settings, fetchSettings } = settingsContext;
 
   const [searchName, setSearchName] = useState("");
   const [searchCylinder, setSearchCylinder] = useState("");
@@ -50,24 +50,31 @@ const ManageBookings = () => {
     }
   }, [bookings, searchName, searchStatus, searchCylinder]);
 
-  const handleStatusChange = async (key, str, userName, userEmail) => {
+  const handleStatusChange = async (key, bookingStatus, toName, toEmail) => {
     let cancelBooking = false;
-    if (str === "Cancelled") {
+    if (bookingStatus === "Cancelled") {
       if (window.confirm("Are you sure you want to cancel this booking?")) {
         cancelBooking = true;
       }
     }
 
-    if ((str === "Cancelled" && cancelBooking) || str === "Approved") {
-      updateBookingStatus(key, str);
-      if (str === "Cancelled") {
+    if (
+      (bookingStatus === "Cancelled" && cancelBooking) ||
+      bookingStatus === "Approved"
+    ) {
+      updateBookingStatus(key, bookingStatus);
+      if (bookingStatus === "Cancelled") {
         toast("Booking Cancelled!");
       } else toast("Booking Approved!");
-      const admin = await fetchAdmin();
-      // if (admin){
-      //   let adminEmail = admin[0].email;
-      //   SendEmail(userName, userEmail, str, adminEmail);
-      // };
+      fetchSettings();
+      // sendEmail(
+      //   toName,
+      //   toEmail,
+      //   bookingStatus,
+      //   settings.name,
+      //   settings.email,
+      //   settings.subject
+      // );
       cancelBooking = false;
     }
   };
@@ -112,6 +119,10 @@ const ManageBookings = () => {
                 <p className="booking-item-container">
                   <span className="item-title">Status:</span>
                   <span className="item-value">{item.status}</span>
+                </p>
+                <p className="booking-item-container">
+                  <span className="item-title">Date:</span>
+                  <span className="item-value">{item.date}</span>
                 </p>
               </div>
               {item.status === "Pending" && (

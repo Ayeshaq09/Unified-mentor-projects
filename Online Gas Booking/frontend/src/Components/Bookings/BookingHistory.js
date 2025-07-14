@@ -23,7 +23,7 @@ const BookingHistory = () => {
   useEffect(() => {
     const filteredBookings = [...bookings].filter((item) => {
       const bookingSearchName = searchName
-        ? item.name.toLowerCase().includes(searchName)
+        ? item.name.toLowerCase().includes(searchName.toLowerCase())
         : true;
       const bookingSearchStatus = searchStatus
         ? item.status === searchStatus
@@ -55,7 +55,7 @@ const BookingHistory = () => {
     const differenceInTime = currentDate.getTime() - bookingDate.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
-    return differenceInDays <= 7 && bookingStatus === "Pending";
+    return differenceInDays <= 3 && bookingStatus === "Pending";
   };
 
   return (
@@ -67,6 +67,7 @@ const BookingHistory = () => {
         setSearchCylinder={setSearchCylinder}
         searchStatus={searchStatus}
         setSearchStatus={setSearchStatus}
+        searchUserBookings={true}
         searchBookings={true}
       />
       {isModalOpen && (
@@ -100,6 +101,10 @@ const BookingHistory = () => {
                 <p className="booking-item-container">
                   <span className="item-title">Status:</span>
                   <span className="item-value">{item.status}</span>
+                </p>
+                <p className="booking-item-container">
+                  <span className="item-title">Date:</span>
+                  <span className="item-value">{item.date}</span>
                 </p>
               </div>
               {isEditable(item.date, item.status) && (

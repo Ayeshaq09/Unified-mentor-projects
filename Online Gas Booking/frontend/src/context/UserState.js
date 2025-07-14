@@ -3,6 +3,10 @@ import UserContext from "./UserContext";
 
 export const UserState = (props) => {
   const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({
+    userId: "",
+    user: "",
+  });
 
   const host = process.env.REACT_APP_API_HOST;
 
@@ -44,7 +48,7 @@ export const UserState = (props) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("authToken")
+          "auth-token": localStorage.getItem("authToken"),
         },
         body: JSON.stringify({
           name,
@@ -104,7 +108,7 @@ export const UserState = (props) => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("authToken")
+          "auth-token": localStorage.getItem("authToken"),
         },
       });
 
@@ -120,23 +124,22 @@ export const UserState = (props) => {
     }
   };
 
-  const fetchAdmin = async () => {
-    const url = `${host}/users/getadmin`;
+  const fetchUser = async () => {
+    const url = `${host}/users/getuser`;
 
     try {
       const response = await fetch(url, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("authToken")
+          "auth-token": localStorage.getItem("authToken"),
         },
       });
 
       const json = await response.json();
 
       if (json.success) {
-        setUsers(json.user);
-        return json.user;
+        setUser({ userId: json.userId, user: json.user });
       } else {
         console.log("error");
       }
@@ -153,7 +156,7 @@ export const UserState = (props) => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("authToken")
+          "auth-token": localStorage.getItem("authToken"),
         },
         body: JSON.stringify({
           name,
@@ -189,14 +192,14 @@ export const UserState = (props) => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("authToken")
+          "auth-token": localStorage.getItem("authToken"),
         },
       });
 
       const json = await response.json();
 
       if (json.success) {
-        const newUsers = users.filter((user) => (user.key !== id));
+        const newUsers = users.filter((user) => user.key !== id);
         setUsers(newUsers);
       } else {
         console.log("error");
@@ -210,11 +213,12 @@ export const UserState = (props) => {
     <UserContext.Provider
       value={{
         users,
+        user,
         addUser,
         createUser,
         loginUser,
         fetchUsers,
-        fetchAdmin,
+        fetchUser,
         updateUser,
         deleteUser,
       }}

@@ -17,6 +17,8 @@ import AddBooking from "./Components/Bookings/AddBooking";
 import BookingHistory from "./Components/Bookings/BookingHistory";
 import BookingState from "./context/BookingState";
 import ManageBookings from "./Components/Bookings/ManageBookings";
+import Settings from "./Components/Settings";
+import SettingState from "./context/SettingState";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -30,48 +32,51 @@ function App() {
     <Router>
       <UserState>
         <BookingState>
-          <Startup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
-            >
+          <SettingState>
+            <Startup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+            <Routes>
               <Route
                 exact
-                path="/managecustomers"
-                element={<ManageCustomers />}
-              />
-              <Route exact path="/addcustomers" element={<AddCustomers />} />
-              <Route exact path="/addbooking" element={<AddBooking />} />
+                path="/"
+                element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
+              >
+                <Route
+                  exact
+                  path="/managecustomers"
+                  element={<ManageCustomers />}
+                />
+                <Route exact path="/addcustomers" element={<AddCustomers />} />
+                <Route exact path="/addbooking" element={<AddBooking />} />
+                <Route
+                  exact
+                  path="/bookinghistory"
+                  element={<BookingHistory />}
+                />
+                <Route
+                  exact
+                  path="/managebookings"
+                  element={<ManageBookings />}
+                />
+                <Route exact path="/settings" element={<Settings />} />
+              </Route>
               <Route
                 exact
-                path="/bookinghistory"
-                element={<BookingHistory />}
+                path="/login"
+                element={
+                  !isLoggedIn ? (
+                    <Login setIsLoggedIn={setIsLoggedIn} />
+                  ) : (
+                    <Navigate to="/" />
+                  )
+                }
               />
               <Route
                 exact
-                path="/managebookings"
-                element={<ManageBookings />}
+                path="/register"
+                element={!isLoggedIn ? <Register /> : <Navigate to="/" />}
               />
-            </Route>
-            <Route
-              exact
-              path="/login"
-              element={
-                !isLoggedIn ? (
-                  <Login setIsLoggedIn={setIsLoggedIn} />
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
-            <Route
-              exact
-              path="/register"
-              element={!isLoggedIn ? <Register /> : <Navigate to="/" />}
-            />
-          </Routes>
+            </Routes>
+          </SettingState>
         </BookingState>
       </UserState>
     </Router>

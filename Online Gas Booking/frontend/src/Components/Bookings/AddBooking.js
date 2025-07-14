@@ -1,12 +1,21 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../Component Styles/AddBooking.css";
 import BookingContext from "../../context/BookingContext";
 import { toast } from "react-toastify";
+import SettingContext from "../../context/SettingContext";
+import UserContext from "../../context/UserContext";
 
 const AddBooking = () => {
   const bookingsContext = useContext(BookingContext);
-  const { addBooking } = bookingsContext;
-  const [ booking, setBooking ] = useState({
+  const { bookings, addBooking, fetchUserBookings, updateTotalBarrels } =
+    bookingsContext;
+  const settingsContext = useContext(SettingContext);
+  const { settings, fetchSettings } = settingsContext;
+
+  const userContext = useContext(UserContext);
+  const { user, fetchUser } = userContext;
+
+  const [booking, setBooking] = useState({
     name: "",
     address: "",
     email: "",
@@ -14,17 +23,26 @@ const AddBooking = () => {
     cylinder: "",
   });
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    fetchSettings();
+    fetchUserBookings();
+    // fetchUser();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addBooking(booking);
-    setBooking({
-      name: "",
-      address: "",
-      email: "",
-      mobile: "",
-      cylinder: "",
-    });
-    toast("Booking Added!");
+    const result = await updateTotalBarrels(booking.cylinder);
+    if (result.result) {
+      addBooking(booking);
+      setBooking({
+        name: "",
+        address: "",
+        email: "",
+        mobile: "",
+        cylinder: "",
+      });
+      toast("Booking Added!");
+    }else toast(result.error);
   };
 
   const onChange = (e) => {
@@ -40,6 +58,7 @@ const AddBooking = () => {
       cylinder: "",
     });
   };
+
   return (
     <div className="addbooking-container">
       <form onSubmit={handleSubmit}>
@@ -96,7 +115,7 @@ const AddBooking = () => {
           className="input booking-input"
           name="cylinder"
           min="1"
-          max="3"
+          max={settings.cylinder}
           onChange={onChange}
           value={booking.cylinder}
           required

@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users.js'));
 app.use('/api/booking', require('./routes/booking.js'));
+app.use('/api/settings', require('./routes/settings.js'));
 
 app.listen(port, () => {
   console.log(`Online gas booking app listening on port ${port}`);
