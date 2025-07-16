@@ -1,0 +1,16 @@
+.addnotice-container{
+    text-align: center;
+    width: 700px;
+}
+
+.notice-input{
+    width: 60%;
+}
+
+.addnotice-btn{
+    width: 49%;
+}
+
+.notice-icon{
+    visibility: hidden;
+}

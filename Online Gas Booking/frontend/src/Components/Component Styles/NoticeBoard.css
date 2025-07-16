@@ -1,0 +1,45 @@
+.notice-title{
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.Critical{
+    background-color: red;
+    color: white;
+}
+
+.General{
+    background-color: green;
+    color: white;
+}
+
+.Warning{
+    background-color: #dede05;
+    color: white;
+}
+
+.notice-container {
+  overflow: auto;
+  height: 90%;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.notice-card {
+  display: flex;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 30px 20px;
+  box-shadow: 0px 0px 8px 1px var(--box-shadow-color1);
+}
+
+.notice-details {
+  flex: 3;
+}
+
+.notice-btns{
+    align-self: center;
+    flex: 1;
+    text-align: center;
+}

@@ -73,7 +73,7 @@ const AddBooking = () => {
           onChange={onChange}
           required
         />
-        <i className="bi bi-person"></i>
+        <i className="bi bi-person input-icon"></i>
 
         <input
           type="text"
@@ -85,7 +85,7 @@ const AddBooking = () => {
           required
         />
 
-        <i className="bi bi-geo-alt"></i>
+        <i className="bi bi-geo-alt input-icon"></i>
 
         <input
           type="text"
@@ -96,7 +96,7 @@ const AddBooking = () => {
           onChange={onChange}
           required
         />
-        <i className="bi bi-envelope"></i>
+        <i className="bi bi-envelope input-icon"></i>
 
         <input
           type="tel"
@@ -107,7 +107,7 @@ const AddBooking = () => {
           onChange={onChange}
           required
         />
-        <i className="bi bi-telephone"></i>
+        <i className="bi bi-telephone input-icon"></i>
 
         <input
           type="number"

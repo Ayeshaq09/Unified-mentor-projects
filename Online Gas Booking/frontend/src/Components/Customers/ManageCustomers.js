@@ -56,8 +56,26 @@ const ManageCustomers = () => {
                 <i className="bi bi-person-bounding-box"></i>
               </div>
               <div className="user-details">
-                <p className="user-name">{item.name}</p>
-                <p className="user-email">{item.email}</p>
+                 <p className="item-container">
+                  <span className="item-title">Name:</span>
+                  <span className="item-value">{item.name}</span>
+                </p>
+                 <p className="item-container">
+                  <span className="item-title">Email:</span>
+                  <span className="item-value">{item.email}</span>
+                </p>
+                <p className="item-container">
+                  <span className="item-title">Total Barrels Assigned:</span>
+                  <span className="item-value">{item.totalBarrels}</span>
+                </p>
+                <p className="item-container">
+                  <span className="item-title">Start Date:</span>
+                  <span className="item-value">{item.totalBarrelsStartDate}</span>
+                </p>
+                <p className="item-container">
+                  <span className="item-title">End Date:</span>
+                  <span className="item-value">{item.totalBarrelsEndDate}</span>
+                </p>
               </div>
               <div className="user-edit">
                 <i

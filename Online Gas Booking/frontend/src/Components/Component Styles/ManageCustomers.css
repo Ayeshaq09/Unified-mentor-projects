@@ -1,5 +1,5 @@
 .users-container {
-  width: 50%;
+  width: 70%;
   height: 90%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -19,11 +19,12 @@
 
 .user-image {
   flex: 0.8;
+  margin-right: 30px;
 }
 
 .user-details {
   flex: 3;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .user-edit {

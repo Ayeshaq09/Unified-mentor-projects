@@ -1,27 +1,32 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Component Styles/Settings.css";
 import SettingContext from "../context/SettingContext";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const SendEmail = () => {
   const settingsContext = useContext(SettingContext);
   const { settings, fetchSettings, updateSettings } = settingsContext;
   const [setting, setSetting] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    cylinder: 1,
+    name: settings.name,
+    email: settings.email,
+    subject: settings.subject,
+    cylinder: settings.cylinder,
   });
 
   useEffect(() => {
     fetchSettings();
     setSetting(settings);
+    // eslint-disable-next-line
   }, []);
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    updateSettings(setting);
-    toast('Settings Updated!');
+    const updatedSetting = await updateSettings(setting);
+    if (updatedSetting) {
+      toast("Settings Updated!");
+    } else {
+      toast('Couldn\'t update the settings!');
+    }
   };
 
   const onChange = (e) => {
@@ -34,7 +39,9 @@ const SendEmail = () => {
         <h2>Email Settings</h2>
         <div className="email-container">
           <div className="form-control-container">
-            <label for="name" className="setting-label">Name</label>
+            <label for="name" className="setting-label">
+              Name
+            </label>
             <input
               type="text"
               name="name"
@@ -46,7 +53,9 @@ const SendEmail = () => {
             />
           </div>
           <div className="form-control-container">
-            <label for="email" className="setting-label">Email</label>
+            <label for="email" className="setting-label">
+              Email
+            </label>
             <input
               type="email"
               name="email"
@@ -58,7 +67,9 @@ const SendEmail = () => {
             />
           </div>
           <div className="form-control-container">
-            <label for="subject" className="setting-label">Subject</label>
+            <label for="subject" className="setting-label">
+              Subject
+            </label>
             <input
               type="text"
               name="subject"
@@ -72,7 +83,9 @@ const SendEmail = () => {
         </div>
         <h2 className="Setting-heading">Cylinder Number Settings</h2>
         <div className="form-control-container">
-          <label for="cylinder" className="setting-label">Max Cylinder Number</label>
+          <label for="cylinder" className="setting-label">
+            Max Cylinder Number
+          </label>
           <div className="cylinder-container">
             <input
               type="number"
@@ -87,10 +100,7 @@ const SendEmail = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="btn settings-btn"
-        >
+        <button type="submit" className="btn settings-btn">
           Save Settings
         </button>
       </form>

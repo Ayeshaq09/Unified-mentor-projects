@@ -57,7 +57,7 @@ const AddCustomers = () => {
           value={credentials.name}
           onChange={onChange}
         />
-        <i className="bi bi-person"></i>
+        <i className="bi bi-person input-icon"></i>
 
         <input
           type="email"
@@ -67,7 +67,7 @@ const AddCustomers = () => {
           value={credentials.email}
           onChange={onChange}
         />
-        <i className="bi bi-envelope"></i>
+        <i className="bi bi-envelope input-icon"></i>
 
         <input
           type={showPassword ? "text" : "password"}
@@ -79,14 +79,14 @@ const AddCustomers = () => {
         />
         {showPassword ? (
           <i
-            className="bi bi-eye-slash"
+            className="bi bi-eye-slash input-icon"
             onClick={() => {
               setShowPassword(false);
             }}
           ></i>
         ) : (
           <i
-            className="bi bi-eye"
+            className="bi bi-eye input-icon"
             onClick={() => {
               setShowPassword(true);
             }}
@@ -103,14 +103,14 @@ const AddCustomers = () => {
         />
         {showConfirmPassword ? (
           <i
-            className="bi bi-eye-slash"
+            className="bi bi-eye-slash input-icon"
             onClick={() => {
               setShowConfirmPassword(false);
             }}
           ></i>
         ) : (
           <i
-            className="bi bi-eye"
+            className="bi bi-eye input-icon"
             onClick={() => {
               setShowConfirmPassword(true);
             }}

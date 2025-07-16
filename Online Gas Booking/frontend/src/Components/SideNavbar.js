@@ -1,33 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Component Styles/SideNavbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const SideNavbar = () => {
-  const role = localStorage.getItem("role");
-  const [isItemActive, setIsItemActive] = useState(null);
+const SideNavbar = (props) => {
+  const [isItemActive, setIsItemActive] = useState("Manage Customers");
+  const navigate = useNavigate();
+  const { role } = props;
 
   const handleClick = (item) => {
     setIsItemActive(item);
   };
 
+  useEffect(() => {
+    if (role === "admin") {
+      setIsItemActive("Manage Customers");
+      navigate("/managecustomers");
+    }else{
+      setIsItemActive("Booking History");
+      navigate("/bookinghistory")
+    }
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <ul className="sidenavbar">
-      <h2>
-        <span className="category-title">Account</span>
-        <div className="category-separator"></div>
-      </h2>
-      <li
-        className={`category-item ${
-          isItemActive === "Manage Account" ? "active" : ""
-        }`}
-        onClick={() => handleClick("Manage Account")}
-      >
-        <a className="category-link">
-          <i className="fa-solid fa-user-pen sidenav-icon"></i>
-          <p>Manage Account</p>
-        </a>
-      </li>
-
       {role === "admin" && (
         <>
           <h2>
@@ -52,7 +48,10 @@ const SideNavbar = () => {
             onClick={() => handleClick("Add Customer")}
           >
             <Link to="/addcustomers" className="category-link">
-              <i className="fa fa-user-plus sidenav-icon" aria-hidden="true"></i>
+              <i
+                className="fa fa-user-plus sidenav-icon"
+                aria-hidden="true"
+              ></i>
               <p>Add Customer</p>
             </Link>
           </li>
@@ -123,8 +122,62 @@ const SideNavbar = () => {
             onClick={() => handleClick("Add Booking")}
           >
             <Link to="/addbooking" className="category-link">
-              <i className="fa fa-user-plus sidenav-icon" aria-hidden="true"></i>
+              <i
+                className="fa fa-user-plus sidenav-icon"
+                aria-hidden="true"
+              ></i>
               <p>Add Booking</p>
+            </Link>
+          </li>
+        </>
+      )}
+
+      {role === "admin" && (
+        <>
+          <h2>
+            <span className="category-title">Notices</span>
+            <div className="category-separator"></div>
+          </h2>
+          <li
+            className={`category-item ${
+              isItemActive === "Add Notice" ? "active" : ""
+            }`}
+            onClick={() => handleClick("Add Notice")}
+          >
+            <Link to="/addnotice" className="category-link">
+              <i className="fa-solid fa-clipboard sidenav-icon"></i>
+              <p>Add Notice</p>
+            </Link>
+          </li>
+          <li
+            className={`category-item ${
+              isItemActive === "Notice Board" ? "active" : ""
+            }`}
+            onClick={() => handleClick("Notice Board")}
+          >
+            <Link to="/noticeboard" className="category-link">
+              <i className="fa-solid fa-clipboard-list sidenav-icon"></i>
+              <p>Notice Board</p>
+            </Link>
+          </li>
+        </>
+      )}
+
+      {role === "user" && (
+        <>
+          <h2>
+            <span className="category-title">Notices</span>
+            <div className="category-separator"></div>
+          </h2>
+          <li
+            className={`category-item ${
+              isItemActive === "Notice Board" ? "active" : ""
+            }`}
+            onClick={() => handleClick("Settings")}
+          >
+            <Link to="/noticeboard" className="category-link">
+              <i className="fa-solid fa-clipboard-list sidenav-icon"></i>
+              <p>Notice Board</p>
             </Link>
           </li>
         </>

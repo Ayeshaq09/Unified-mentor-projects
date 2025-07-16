@@ -2,21 +2,7 @@
   overflow: auto;
   height: 90%;
   width: 70%;
-
   margin-bottom: 30px;
-}
-
-.item-title {
-  font-weight: bolder;
-  font-size: 17px;
-  width: 200px;
-  display: inline-block;
-}
-
-.item-value {
-  font-size: 15px;
-  width: 400px;
-  display: inline-block;
 }
 
 .booking-card {
@@ -56,10 +42,6 @@
 .edit-btn:hover {
   background-color: var(--darkgray-color1);
   color: var(--text-color1);
-}
-
-.booking-item-container {
-  display: flex;
 }
 
 .booking-edit-icon,

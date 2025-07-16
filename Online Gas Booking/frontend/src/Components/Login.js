@@ -3,6 +3,7 @@ import "./Component Styles/Login.css";
 import UserContext from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import ImageCard from "./ImageCard";
+import { toast } from "react-toastify";
 
 export default function Login(props) {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,9 +17,12 @@ export default function Login(props) {
     cpassword: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    loginUser(credentials, navigate, props.setIsLoggedIn);
+    const loggedIn = await loginUser(credentials, navigate, props.setIsLoggedIn);
+    if (!loggedIn){
+      toast('Wrong credentials');
+    }
   };
 
   const onChange = (e) => {
@@ -49,7 +53,7 @@ export default function Login(props) {
                 onChange={onChange}
                 required
               />
-              <i className="bi bi-envelope"></i>
+              <i className="bi bi-envelope input-icon"></i>
 
               <input
                 type={showPassword ? "text" : "password"}
@@ -62,14 +66,14 @@ export default function Login(props) {
               />
               {showPassword ? (
                 <i
-                  className="bi bi-eye-slash"
+                  className="bi bi-eye-slash input-icon"
                   onClick={() => {
                     setShowPassword(false);
                   }}
                 ></i>
               ) : (
                 <i
-                  className="bi bi-eye"
+                  className="bi bi-eye input-icon"
                   onClick={() => {
                     setShowPassword(true);
                   }}

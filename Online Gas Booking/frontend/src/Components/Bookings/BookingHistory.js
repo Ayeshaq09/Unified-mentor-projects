@@ -49,7 +49,13 @@ const BookingHistory = () => {
   };
 
   const isEditable = (bookingDateStr, bookingStatus) => {
-    const bookingDate = new Date(bookingDateStr);
+    const [day, month, year] = bookingDateStr.split("/");
+    const reformattedDate = `${year}-${month.padStart(2, "0")}-${day.padStart(
+      2,
+      "0"
+    )}`;
+
+    const bookingDate = new Date(reformattedDate);
     const currentDate = new Date();
 
     const differenceInTime = currentDate.getTime() - bookingDate.getTime();
@@ -78,31 +84,31 @@ const BookingHistory = () => {
           filteredBooking.map((item) => (
             <div className="booking-card" key={item.key}>
               <div className="booking-details">
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Name:</span>
                   <span className="item-value">{item.name}</span>
                 </p>
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Email:</span>
                   <span className="item-value">{item.email}</span>
                 </p>
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Address:</span>
                   <span className="item-value">{item.address}</span>
                 </p>
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Mobile Number:</span>
                   <span className="item-value">{item.mobile}</span>
                 </p>
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Number of Cylinders:</span>
                   <span className="item-value">{item.cylinder}</span>
                 </p>
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Status:</span>
                   <span className="item-value">{item.status}</span>
                 </p>
-                <p className="booking-item-container">
+                <p className="item-container">
                   <span className="item-title">Date:</span>
                   <span className="item-value">{item.date}</span>
                 </p>

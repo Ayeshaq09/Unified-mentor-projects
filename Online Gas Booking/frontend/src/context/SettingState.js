@@ -24,17 +24,20 @@ const SettingState = (props) => {
       const json = await response.json();
       if (json.success) {
         setSettings(json.settings[0]);
+        return true;
       } else {
         console.log("error");
+        return false;
       }
     } catch (error) {
       console.error(error.message);
+      return false;
     }
   };
 
   const updateSettings = async (setting) => {
     const url = `${host}/settings/updatesettings`;
-    const {name, email, subject, cylinder} = setting;
+    const { name, email, subject, cylinder } = setting;
     try {
       const response = await fetch(url, {
         method: "PUT",
@@ -53,15 +56,21 @@ const SettingState = (props) => {
       const json = await response.json();
       if (json.success) {
         setSettings(json.settings);
+        return true;
       } else {
         console.log("error");
+        return false;
       }
     } catch (error) {
       console.error(error.message);
+      return false;
     }
   };
+
   return (
-    <SettingContext.Provider value={{ settings, fetchSettings, updateSettings }}>
+    <SettingContext.Provider
+      value={{ settings, fetchSettings, updateSettings }}
+    >
       {props.children}
     </SettingContext.Provider>
   );

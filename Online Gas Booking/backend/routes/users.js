@@ -20,8 +20,8 @@ router.get("/getusers", fetchUser, async (req, res) => {
       let role = childSnapshot.val().role;
       let date = new Date(childSnapshot.val().date).toLocaleDateString();
       let totalBarrels = childSnapshot.val().totalBarrels;
-      let totalBarrelsStartDate = childSnapshot.val().totalBarrelsStartDate;
-      let totalBarrelsEndDate = childSnapshot.val().totalBarrelsEndDate;
+      let totalBarrelsStartDate = new Date(childSnapshot.val().totalBarrelsStartDate).toLocaleDateString('en-GB');
+      let totalBarrelsEndDate = new Date(childSnapshot.val().totalBarrelsEndDate).toLocaleDateString('en-GB');
       if (role === "user")
         users.push({
           key,

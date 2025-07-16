@@ -3,11 +3,12 @@ import SideNavbar from "./SideNavbar";
 import { Outlet } from "react-router-dom";
 import './Component Styles/Home.css';
 
-const Home = () => {
+const Home = (props) => {
+  const { role } = props;
   return (
     <div className="home-container">
         <div className="sidenavbar-container">
-          <SideNavbar/>  
+          <SideNavbar role={role}/>  
         </div>
         <div className="content-container">
           <Outlet/>

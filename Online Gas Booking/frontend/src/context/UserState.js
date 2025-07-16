@@ -92,8 +92,10 @@ export const UserState = (props) => {
         localStorage.setItem("role", json.role);
         setIsLoggedIn(true);
         navigate("/");
+        return true;
       } else {
         console.log("error");
+        return false;
       }
     } catch (error) {
       console.error(error.message);

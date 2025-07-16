@@ -67,14 +67,14 @@ const ManageBookings = () => {
         toast("Booking Cancelled!");
       } else toast("Booking Approved!");
       fetchSettings();
-      // sendEmail(
-      //   toName,
-      //   toEmail,
-      //   bookingStatus,
-      //   settings.name,
-      //   settings.email,
-      //   settings.subject
-      // );
+      sendEmail(
+        toName,
+        toEmail,
+        bookingStatus,
+        settings.name,
+        settings.email,
+        settings.subject
+      );
       cancelBooking = false;
     }
   };

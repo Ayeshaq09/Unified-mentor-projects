@@ -22,8 +22,7 @@ router.get("/getbookings", fetchUser, async (req, res) => {
       let cylinder = childSnapshot.val().cylinder;
       let status = childSnapshot.val().status;
       let user = childSnapshot.val().user;
-      let date = childSnapshot.val().date;
-      date = new Date(date).toLocaleDateString("en-US");
+      let date = new Date(childSnapshot.val().date).toLocaleDateString("en-GB");
       bookings.push({
         key,
         name,
@@ -72,8 +71,7 @@ router.get("/getuserbookings", fetchUser, async (req, res) => {
         let cylinder = childSnapshot.val().cylinder;
         let status = childSnapshot.val().status;
         let user = childSnapshot.val().user;
-        let date = childSnapshot.val().date;
-        date = new Date(date).toLocaleDateString("en-US");
+        let date = new Date(childSnapshot.val().date).toLocaleDateString('en-GB');
         bookings.push({
           key,
           name,
@@ -139,7 +137,7 @@ router.post(
         cylinder,
         status: "Pending",
         user: req.user.id,
-        date: new Date().toISOString(),
+        date: new Date().toLocaleDateString('en-US'),
       });
 
       success = true;
@@ -154,7 +152,7 @@ router.post(
           cylinder,
           status: "Pending",
           user: req.user.id,
-          date: new Date().toISOString(),
+          date: new Date().toLocaleDateString('en-GB'),
         },
       });
     } catch (error) {
