@@ -4,7 +4,7 @@ import "./Component Styles/Startup.css";
 
 export default function Startup(props) {
   return (
-    <div className="outer-container">
+    <div className="navbar-container">
       <div className="navbar">
         <div className="header">
           <img

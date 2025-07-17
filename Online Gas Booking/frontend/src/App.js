@@ -32,6 +32,8 @@ function App() {
     localStorage.getItem("role")
   );
 
+  const authToken = localStorage.getItem("authToken");
+
   useEffect(() => {
     setIsLoggedIn(!!localStorage.getItem("authToken"));
     setRole(localStorage.getItem("role"));
@@ -47,7 +49,7 @@ function App() {
                 <Route
                   exact
                   path="/"
-                  element={isLoggedIn ? <Home role={role}/> : <Navigate to="/login" />}
+                  element={isLoggedIn ? <Home role={role} authToken={authToken}/> : <Navigate to="/login" />}
                 >
                   <Route
                     exact

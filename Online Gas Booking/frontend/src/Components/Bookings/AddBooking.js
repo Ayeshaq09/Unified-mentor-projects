@@ -120,7 +120,7 @@ const AddBooking = () => {
           value={booking.cylinder}
           required
         />
-        <i className="bi bi-telephone cylinder-icon"></i>
+        <i className="bi bi-telephone hidden-icon"></i>
 
         <div className="form-btns">
           <button

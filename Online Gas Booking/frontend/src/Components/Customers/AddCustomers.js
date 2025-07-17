@@ -18,14 +18,19 @@ const AddCustomers = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addUser(credentials);
-    setCredentials({
-      name: "",
-      email: "",
-      password: "",
-      cpassword: "",
-    });
-    toast("User Added!");
+    if (credentials.password === credentials.cpassword) {
+      addUser(credentials);
+      setCredentials({
+        name: "",
+        email: "",
+        password: "",
+        cpassword: "",
+      });
+      toast("User Added!");
+    }
+    else{
+      toast("Wrong credentials!");
+    }
   };
 
   const handleReset = () => {

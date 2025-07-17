@@ -53,7 +53,7 @@ const BookingUpdateModal = (props) => {
               value={credentials.address}
               onChange={onChange}
             />
-            <i className="bi bi-geo-alt"></i>
+            <i className="bi bi-geo-alt input-icon"></i>
 
             <input
               type="tel"
@@ -63,7 +63,7 @@ const BookingUpdateModal = (props) => {
               value={credentials.mobile}
               onChange={onChange}
             />
-            <i className="bi bi-telephone"></i>
+            <i className="bi bi-telephone input-icon"></i>
 
             <div className="modal-btns">
               <button

@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Component Styles/SideNavbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const SideNavbar = (props) => {
   const [isItemActive, setIsItemActive] = useState("Manage Customers");
   const navigate = useNavigate();
-  const { role } = props;
+  const { role, authToken } = props;
+  const userContext = useContext(UserContext);
+  const { user, fetchUser } = userContext;
 
   const handleClick = (item) => {
     setIsItemActive(item);
@@ -15,15 +18,22 @@ const SideNavbar = (props) => {
     if (role === "admin") {
       setIsItemActive("Manage Customers");
       navigate("/managecustomers");
-    }else{
+    } else {
       setIsItemActive("Booking History");
-      navigate("/bookinghistory")
+      navigate("/bookinghistory");
     }
+
+    fetchUser(authToken);
     // eslint-disable-next-line
   }, []);
 
   return (
     <ul className="sidenavbar">
+      <h1>
+        <span className="category-title userName">{`Welcome \n${user.user.name}`}</span>
+        <div className="category-separator"></div>
+      </h1>
+
       {role === "admin" && (
         <>
           <h2>

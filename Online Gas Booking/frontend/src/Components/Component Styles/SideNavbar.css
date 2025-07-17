@@ -7,8 +7,15 @@
   padding: 20px 10px;
 }
 
-h2 {
+h2,
+h1 {
   position: relative;
+}
+
+.userName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sidenavbar:hover {
@@ -17,14 +24,11 @@ h2 {
 
 .category-separator {
   width: 100%;
-  /* margin-left: 10px; */
   background: var(--text-color);
   height: 3px;
-  /* opacity: 1; */
   left: 0;
   position: absolute;
   top: 15px;
-  /* transition: all 0.3s ease; */
   transform: scaleX(1);
   transform-origin: right;
   transition-duration: 0.2s;
@@ -63,7 +67,7 @@ h2 {
   background-color: rgba(236, 219, 224, 1);
 }
 
-.sidenav-icon{
+.sidenav-icon {
   margin-right: 18px;
 }
 

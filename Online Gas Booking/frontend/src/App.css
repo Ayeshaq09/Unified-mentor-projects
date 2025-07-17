@@ -34,73 +34,40 @@ body {
   text-align: center;
 }
 
-.main-outer-container {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main {
-  display: flex;
-  justify-content: center;
-  width: 700px;
-  align-items: center;
-  margin: 0px auto;
-  box-shadow: 0px 0px 20px 2px var(--box-shadow-color1);
-}
-
-.main-heading {
-  position: absolute;
+.input {
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 3px 40px 3px 10px;
   color: var(--text-color);
-  left: 500px;
-  top: 450px;
+  font-size: 15px;
+  outline: none;
+  border: 2px solid var(--box-shadow-color);
 }
 
-.login-register-form {
-  flex: 1;
-  padding: 20px 20px 20px 0px;
-  text-align: center;
+.input:focus {
+  border-color: var(--darkgray-color1);
 }
 
-.image-container {
-  flex: 1;
-  text-align: center;
+.input-icon {
+  margin-left: -30px;
+  color: var(--darkgray-color1);
 }
 
-.input{
-    margin-top: 20px;
-    height: 40px;
-    border-radius: 20px;
-    padding: 3px 10px;
-    color: var(--text-color);
-    font-size: 15px;
-    outline: none;
-    border: 2px solid var(--box-shadow-color) ;
+.btn {
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: var(--text-color);
+  color: var(--text-color1);
+  border: none;
 }
 
-.input:focus{
-    border-color: var(--darkgray-color1);
-}
-
-.input-icon{
-    margin-left: -30px;
-    color: var(--darkgray-color1);
-}
-
-.btn{
-    margin-top: 20px;
-    height: 40px;
-    border-radius: 20px;
-    outline: none;
-    cursor: pointer;
-    font-size: 20px;
-    background-color: var(--text-color);
-    color: var(--text-color1);
-    border: none;
-}
-
-.btn:hover{
-    background-color: var(--hover-color);
+.btn:hover {
+  background-color: var(--hover-color);
 }
 
 .item-container {
@@ -120,39 +87,16 @@ body {
   display: inline-block;
 }
 
+.hidden-icon {
+  margin-left: -30px;
+  visibility: hidden;
+}
 
 /* media queries */
 
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    width: 400px;
-  }
-
-  .main img {
-    height: 200px;
-  }
-
-  .main-heading {
-    top: 170px;
-  }
-}
-
 @media screen and (max-width: 425px) {
-  .container {
-    width: 280px;
+  .input{
+    font-size: 12px;
+    height: 30px;
   }
-
-  .main img {
-    height: 200px;
-  }
-
-  .main-heading {
-    top: 180px;
-    font-size: 20px;
-  }
-
-  .login-heading {
-    font-size: 30px;
-  }
-}
+} 

@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import "./Component Styles/Register.css";
+import "./Component Styles/Form.css";
 import UserContext from "../context/UserContext";
 import ImageCard from "./ImageCard";
 import { Link, useNavigate } from "react-router-dom";
-import { toast }  from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,8 +23,8 @@ export default function Register() {
     e.preventDefault();
     if (credentials.password === credentials.cpassword) {
       createUser(credentials, navigate);
-    }else{
-      toast('Password and Corfirm password doesn\'t match!');
+    } else {
+      toast("Password and Corfirm password doesn't match!");
     }
   };
 
@@ -33,104 +33,103 @@ export default function Register() {
   };
 
   return (
-    <div className="main-outer-container">
-      <div className="main">
+    <div className="outer-container">
+      <div className="main-container">
         <div className="image-container">
           <ImageCard></ImageCard>
         </div>
-        <div className="login-register-form">
-          <div className="loginform-container">
-            <form onSubmit={handleSubmit}>
-              <h1 className="login-heading">Register</h1>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <h1 className="form-heading">Register</h1>
 
-              <div className="user-icon-container">
-                <i className="bi bi-person-circle"></i>
-              </div>
+            <div className="user-icon-container">
+              <i className="bi bi-person-circle"></i>
+            </div>
 
-              <input
-                type="text"
-                placeholder="Username"
-                className="input register-input"
-                name="name"
-                value={credentials.name}
-                onChange={onChange}
-                required
-              />
-              <i className="bi bi-person input-icon"></i>
+            <input
+              type="text"
+              placeholder="Username"
+              className="input form-input"
+              name="name"
+              value={credentials.name}
+              onChange={onChange}
+              required
+            />
+            <i className="bi bi-person input-icon"></i>
 
-              <input
-                type="email"
-                placeholder="Email address"
-                className="input register-input"
-                name="email"
-                value={credentials.email}
-                onChange={onChange}
-                required
-              />
-              <i class="bi bi-envelope input-icon"></i>
+            <input
+              type="email"
+              placeholder="Email address"
+              className="input form-input"
+              name="email"
+              value={credentials.email}
+              onChange={onChange}
+              required
+            />
+            <i class="bi bi-envelope input-icon"></i>
 
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                className="input register-input"
-                name="password"
-                value={credentials.password}
-                onChange={onChange}
-                required
-              />
-              {showPassword ? (
-                <i
-                  className="bi bi-eye-slash input-icon"
-                  onClick={() => {
-                    setShowPassword(false);
-                  }}
-                ></i>
-              ) : (
-                <i
-                  className="bi bi-eye input-icon"
-                  onClick={() => {
-                    setShowPassword(true);
-                  }}
-                ></i>
-              )}
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              className="input form-input"
+              name="password"
+              value={credentials.password}
+              onChange={onChange}
+              required
+            />
+            {showPassword ? (
+              <i
+                className="bi bi-eye-slash input-icon"
+                onClick={() => {
+                  setShowPassword(false);
+                }}
+              ></i>
+            ) : (
+              <i
+                className="bi bi-eye input-icon"
+                onClick={() => {
+                  setShowPassword(true);
+                }}
+              ></i>
+            )}
 
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                placeholder="Confirm Password"
-                className="input register-input"
-                name="cpassword"
-                onChange={onChange}
-                value={credentials.cpassword}
-                required
-              />
-              {showConfirmPassword ? (
-                <i
-                  className="bi bi-eye-slash input-icon"
-                  onClick={() => {
-                    setShowConfirmPassword(false);
-                  }}
-                ></i>
-              ) : (
-                <i
-                  className="bi bi-eye input-icon"
-                  onClick={() => {
-                    setShowConfirmPassword(true);
-                  }}
-                ></i>
-              )}
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm Password"
+              className="input form-input"
+              name="cpassword"
+              onChange={onChange}
+              value={credentials.cpassword}
+              required
+            />
+            {showConfirmPassword ? (
+              <i
+                className="bi bi-eye-slash input-icon"
+                onClick={() => {
+                  setShowConfirmPassword(false);
+                }}
+              ></i>
+            ) : (
+              <i
+                className="bi bi-eye input-icon"
+                onClick={() => {
+                  setShowConfirmPassword(true);
+                }}
+              ></i>
+            )}
 
-              <button type="submit" className="btn login-btn">
-                Register
-              </button>
+            <button type="submit" className="btn form-btn">
+              Register
+            </button>
+            <i className="bi bi-eye input-icon hidden-icon"></i>
 
-              <p className="register-para">
-                Already a customer?&nbsp;&nbsp;
-                <Link className="register-link" to="/login">
-                  Login
-                </Link>
-              </p>
-            </form>
-          </div>
+            <p className="form-para">
+              Already a customer?&nbsp;&nbsp;
+              <Link className="form-link" to="/login">
+                Login
+              </Link>
+            </p>
+          </form>
         </div>
       </div>
     </div>
