@@ -5,6 +5,7 @@ const db = require("../firebaseDb");
 const bcrypt = require("bcryptjs");
 const jsonwebtoken = require("jsonwebtoken");
 
+// api to register the user and assign the auth-token
 router.post(
   "/createuser",
   [
