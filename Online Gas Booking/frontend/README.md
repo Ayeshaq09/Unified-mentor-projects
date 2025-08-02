@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+**Gas Agency System**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project contains customers module, booking module, notice module and settings module.
 
-## Available Scripts
+**Features**
 
-In the project directory, you can run:
+This application supports two types of users:
+1.Admin
+-Has access to manage customers, bookings, notices, and application settings.
+-Can approve or reject booking requests.
+-Can add important notices for users.
 
-### `npm start`
+2.User (Client)
+-Can add and manage their own cylinder bookings.
+-Can view booking history and active notices posted by the admin.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app is mobile-responsive and is user-friendly.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Technologies Used**
 
-### `npm test`
+-HTML5, CSS3, JavaScript, Reactjs
+-Nodejs for backend
+-Firebase for data storage
+-Recharts for the graph
+-react-toastify for notifications
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Setup Instructions**
 
-### `npm run build`
+Clone the repository
+Run 'cd frontend' in terminal.
+Then, run 'npm start both' in vscode terminal to start the app and open the "Available on" links mentioned in terminal after you run the command, 
+eg:- (http://localhost:3000)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**How to use the project**
+-The application first displays the login page and if the user is new then he/she can register using register page.
+-Once registered the user can login.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Admin credentials:
+email - mainmail.notify@gmail.com
+password - mainmail.notify
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The admin contains:
+1. Manage Customers
+ -All the registered/added customers are displayed here.
+ -Admin can edit the customer details or delete the customer.
+ -Customer details contain - name, email, total barrels assigned (12 for a year),
+  start date (date when user was added), end date (that's the end date for the total assigned barrels).
+ -If Admin deletes a user, then all the linked bookings are also deleted from the firebase.
+ -Admin can also search customers based on name and email.
 
-### `npm run eject`
+2. Add Customer
+ -Admin can add new customer
+ -The form contains name, email, password.
+ -Once the user is added, 12 total barrels will be assigned to the user.
+ -Then, user can login and add bookings.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Manage Bookings
+ -All the user bookings are displayed here.
+ -Admin can approve or cancel the bookings.
+ -Booking details contain - name, email, address, mobile number, Number of cylinders booked by user, 
+    status (Pending, Approved, Cancelled), booking date.
+ -Admin can also search bookings based on name and status.
+ -When admin approves or cancels the booking, the user receives a mail from the admin email - mainmail.notify@gmail.com.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Settings
+ -It contains email settings - admin name, email, subject
+    Cylinder settings - maximum number of cylinders that a user can book during each booking.
+ -Admin can change/update - name, subject and max cylinder number.
+ -Admin email cannot be changed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Add Notice
+ -Admin can add notice for users.
+ -The form contains - title, message, message severity (Critical, Warning, General), duration (when duration 
+   expires the notice will not be displayed to the user).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Notice Board
+ -All valid notices are displayed here.
+ -Admin can edit and delete notices.
 
-## Learn More
+The user contains:
+1. Booking History
+ -It displays all the booking history of the user.
+ -The booking details contain - name, email, address, mobile number, no. of cylinders booked, status, date of booking.
+ -If the admin, cancels or approves the booking, the status here changes accordingly.
+ -When booking is placed, for about 3 days user can edit/delete the booking details if the booking status is pending.
+ -User can also search the bookings based on no. of cylinders and status.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Add booking
+ -User can add booking.
+ -The form contains name, email, address, mobile number, number of cylinders.
+ -When booking is placed, the number of booked cylinders is deducted from the total barrels count (12).
+ -If the booking is cancelled by admin, then the number of cylinders booked are added back to the total barrels.
+ -If the booking is deleted by the user, then the number of cylinders booked are added back to the total barrels.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Notice Board
+ -It displays all the valid notices here that are added by admin.
 
-### Code Splitting
+-The user or the admin can then logout.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Resize the screen to check the responsiveness of the application.
