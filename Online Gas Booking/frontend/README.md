@@ -21,7 +21,6 @@ The app is mobile-responsive and is user-friendly.
 -HTML5, CSS3, JavaScript, Reactjs
 -Nodejs for backend
 -Firebase for data storage
--Recharts for the graph
 -react-toastify for notifications
 
 **Setup Instructions**
