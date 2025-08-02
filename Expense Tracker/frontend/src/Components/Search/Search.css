@@ -1,0 +1,10 @@
+.search-input {
+  margin-top: 0px;
+}
+
+/* media queries */
+@media screen and (max-width: 425px) {
+  .search-input {
+    width: 100%;
+  }
+}

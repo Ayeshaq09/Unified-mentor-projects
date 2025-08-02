@@ -1,0 +1,10 @@
+.recharts-surface {
+  outline: none;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .recharts-responsive-container {
+    min-width: 600px !important;
+  }
+}

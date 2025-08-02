@@ -1,0 +1,40 @@
+.allexpenses-container {
+  margin: 50px;
+}
+
+.budget-expenses-container {
+  overflow-y: auto;
+  height: 60vh;
+  margin: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.export-btn {
+  padding: 10px;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .allexpenses-container {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search-container {
+    display: block;
+  }
+
+  .export-btn {
+    margin-top: 20px;
+  }
+
+  .budget-expenses-container{
+    margin: 20px 0px;
+  }
+}

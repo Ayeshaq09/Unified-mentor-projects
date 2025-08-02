@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --box-shadow-color: #8080802e;
+  --darkgray-color1: #796e6e;
+  --text-color: #3131a5;
+  --text-color1: #9898fc;
+  --text-color2: #ffffff;
+  --hover-color: #0000ff3d;
+  --box-shadow-color1: #8080802e;
+  --del-icon-color: red;
+  --table-head-color: #c7cdd6;
+  --table-row-color: #d1d3d569;
+  --text-color3: gray;
+  --background-color: rgb(57 55 55 / 83%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", Verdana, Geneva;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input {
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 3px 10px;
+  color: var(--text-color1);
+  font-size: 15px;
+  outline: none;
+  border: 2px solid var(--box-shadow-color);
+}
+
+.input:focus {
+  border-color: var(--darkgray-color1);
+}
+
+.input-icon {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  color: var(--darkgray-color1);
+}
+
+.btn {
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: var(--text-color1);
+  color: var(--text-color2);
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--text-color);
+}
+
+.item-container {
+  display: flex;
+}
+
+.item-title {
+  font-weight: bolder;
+  font-size: 17px;
+  width: 200px;
+  display: inline-block;
+}
+
+.item-value {
+  font-size: 15px;
+  width: 400px;
+  display: inline-block;
+}
+
+.no-records {
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.heading {
+  margin-bottom: 30px;
+}
+
+/* media queries */
+@media screen and (max-width: 425px) {
+  .btn {
+    font-size: 15px;
+  }
+
+  .no-records {
+    font-size: 14px;
+  }
+}

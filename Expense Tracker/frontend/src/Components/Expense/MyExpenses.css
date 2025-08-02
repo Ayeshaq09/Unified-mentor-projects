@@ -1,0 +1,79 @@
+.budget-expense-container {
+  display: flex;
+  gap: 50px;
+}
+
+.myexpenses-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expenses-container {
+  margin: 50px;
+  height: 70vh;
+}
+
+.budget-item-container {
+  flex: 1;
+}
+
+.addmodal-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 9px 3px var(--box-shadow-color1);
+}
+
+.edit-btn {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.del-btn {
+  background-color: var(--del-icon-color);
+  padding: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.budget-expenses {
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 9px 3px var(--box-shadow-color1);
+  height: 200px;
+  overflow-y: auto;
+}
+
+.del-icon {
+  color: var(--del-icon-color);
+  cursor: pointer;
+}
+
+.myexpenses-heading {
+  cursor: pointer;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .budget-expense-container {
+    display: block;
+  }
+
+  .addmodal-container {
+    margin-top: 30px;
+  }
+
+  .myexpenses-header {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .expenses-container {
+    margin: 8px;
+  }
+}

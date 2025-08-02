@@ -1,0 +1,52 @@
+.modal-content {
+  width: 400px;
+  height: 300px;
+  background: var(--text-color2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+.modal-input {
+  width: 85%;
+}
+
+.modal-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-btn-container {
+  padding: 30px 0px;
+  width: 85%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-btn {
+  width: 49%;
+}
+
+.bi-x {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* media queries */
+@media screen and (max-width: 425px) {
+  .modal-header {
+    font-size: 15px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}

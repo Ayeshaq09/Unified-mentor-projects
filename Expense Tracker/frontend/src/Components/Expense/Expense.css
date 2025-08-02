@@ -1,0 +1,18 @@
+table {
+  padding: 20px;
+  width: 100%;
+}
+
+thead th {
+  width: 25%;
+  height: 30px;
+  background-color: var(--table-head-color);
+}
+
+tbody tr td {
+  text-align: center;
+}
+
+tbody tr {
+  background-color: var(--table-row-color);
+}

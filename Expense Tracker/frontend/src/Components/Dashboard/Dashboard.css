@@ -1,0 +1,36 @@
+.dashboard-container {
+  margin: 50px;
+  overflow-y: auto;
+  padding: 20px 0px;
+}
+
+.info-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 0px 10px;
+}
+
+.graph {
+  margin-top: 100px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .info-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-container {
+    height: calc(100vh - 100px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    margin: 5px;
+  }
+}
