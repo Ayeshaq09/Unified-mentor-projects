@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: "Libertinus Sans", sans-serif;
+  text-decoration: none;
+}
+
+:root {
+  --bg-color: #0b1116;
+  --main-color: #00abf0;
+  --text-color: #000;
+  --text-color1: #504a4a;
+  --text-color2: #8a7f7f;
+  --white-color: #fff;
+  --border: 1.6px solid #00abf0;
+  --disabled-bg-color: #ccc;
+  --disabled-text-color: #666;
+  --box-shadow-color: rgb(0 0 0 / 75%);
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+.cover-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: var(--main-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.year {
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+}
+
+box-icon.icon {
+  fill: var(--main-color);
+  margin-right: 5px;
+}
+
+.year span {
+  margin-bottom: 7px;
+  display: block;
+}
+
+.info-container {
+  border-left: var(--border);
+}
+
+.info li{
+  list-style: none;
+}
+
+.content {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -9px;
+  width: 16px;
+  height: 16px;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.demoPage {
+  width: 100%;
+  height: 100%;
+  background: var(--white-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.tech,
+.college {
+  color: var(--text-color1);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  width: 150px;
+  height: 50px;
+  background: var(--main-color);
+  border: var(--border);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--white-color);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.flip-btn {
+  cursor: pointer;
+  border: var(--border);
+  background: var(--white-color);
+  position: relative;
+}
+
+.flip-btn box-icon.icon {
+  margin: 0px auto;
+}
+
+.flip-btn p {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  color: var(--main-color);
+  font-size: 15px;
+  font-weight: 900;
+  opacity: 0;
+  transition: 0.2s opacity, 0.2s transform;
+  transform: translateY(0px);
+}
+
+.flip-btn.profile-btn:hover p {
+  transform: translateY(-30px);
+  opacity: 1;
+}
+
+.flip-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--disabled-bg-color);
+  fill: var(--disabled-text-color);
+}
+
+.flip-btn.profile-btn.disabled:hover p {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--disabled-bg-color);
+  fill: var(--disabled-text-color);
+  transform: translateY(0px);
+  opacity: 0;
+}
+
+.btn:nth-child(2) {
+  background: transparent;
+  color: var(--main-color);
+}
+
+.btn:nth-child(2):hover {
+  background: var(--main-color);
+  color: var(--white-color);
+}
+
+.marks {
+  color: (--text-color2);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-name{
+  cursor: pointer;
+}
+
+.tooltip{
+ width: 80% !important;
+}
+
+/* media queries */
+@media screen and (max-width: 1300px) {
+  .btn {
+    width: 97px;
+    height: 34px;
+    font-size: 14px;
+  }
+  .content h3 {
+    margin-bottom: 5px;
+    font-size: 17px;
+  }
+  .college {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .marks {
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  .info {
+    font-size: 15px;
+  }
+  .tech {
+    font-size: 12px;
+  }
+}
