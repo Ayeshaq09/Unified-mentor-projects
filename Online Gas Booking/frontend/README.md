@@ -1,6 +1,6 @@
 **Gas Agency System**
 
-This project contains customers module, booking module, notice module and settings module.
+This project allows users to book cylinders and the admin to approve or cancel the user books and it contains customers module, booking module, notice module and settings module.
 
 **Features**
 

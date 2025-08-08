@@ -1,10 +1,10 @@
 **Expense Tracker**
 
-This project contains dashboard module, budgets module and expenses module.
+This project display budgets and expenses and it contains dashboard module, budgets module and expenses module.
 
 **Features**
 
-This application conatins:
+This application contains:
 1.Login and Register forms
 2.Dashboard with chart
 3.Displays all budgets information 
