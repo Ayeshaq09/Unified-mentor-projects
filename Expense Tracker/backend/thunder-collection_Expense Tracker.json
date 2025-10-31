@@ -1,0 +1,281 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Expense Tracker",
+    "collectionId": "3a924c56-443e-461a-ba60-befa166f5a64",
+    "dateExported": "2025-08-22T11:05:27.263Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "bf5ce8fc-9d09-48dc-b939-72b0addba648",
+            "name": "Users",
+            "containerId": "",
+            "created": "2025-07-16T12:12:55.646Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "d1c69a5b-bead-47ed-829f-a81c53f6b422",
+            "name": "Budgets",
+            "containerId": "",
+            "created": "2025-07-19T18:00:19.958Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "1a4a0567-8310-42ee-b932-deaebaf3a482",
+            "name": "Expenses",
+            "containerId": "",
+            "created": "2025-07-21T12:35:44.334Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "081d35a0-ae65-4610-ada7-6d0fab83500c",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "bf5ce8fc-9d09-48dc-b939-72b0addba648",
+            "name": "Create user",
+            "url": "http://localhost:5000/api/auth/createuser",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-07-16T12:13:13.850Z",
+            "modified": "2025-07-19T18:31:37.061Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Ayesha\",\n  \"email\": \"ayesha@g.co\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b58702bf-72a9-469f-bef8-f7d8a1a636cc",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "bf5ce8fc-9d09-48dc-b939-72b0addba648",
+            "name": "Login user",
+            "url": "http://localhost:5000/api/auth/loginuser",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-07-16T13:38:40.797Z",
+            "modified": "2025-07-16T13:46:27.692Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"misha@g.co\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "3dfd33f0-eae6-48fa-a72c-72437a0c182a",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "d1c69a5b-bead-47ed-829f-a81c53f6b422",
+            "name": "Add budget",
+            "url": "http://localhost:5000/api/budget/addbudget",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-07-19T18:14:11.343Z",
+            "modified": "2025-07-20T09:54:29.493Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WSVJKSnNLZnZUY2hqUXJSQmYifSwiaWF0IjoxNzUyOTQ5NjIwfQ.GMpFiMDimO792rIQ4oFXfuncLPvulaX1pz0jhhl1XIU"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Gold\",\n  \"amount\": 2500\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5ef204bf-5674-40b6-a1b1-b5ccd66deb82",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "d1c69a5b-bead-47ed-829f-a81c53f6b422",
+            "name": "Fetch budgets",
+            "url": "http://localhost:5000/api/budget/fetchbudget",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-07-20T08:44:43.233Z",
+            "modified": "2025-07-23T09:12:22.308Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WT19PTDZJUGUySzhuYU1MVlEifSwiaWF0IjoxNzUyOTM1MDI5fQ.UKlNfo0PpxtHVeNQq3h9qk22hN2E16fqBVuFEjvttnU"
+                }
+            ]
+        },
+        {
+            "_id": "aa70e421-09cc-4321-9f97-3da0d2590eeb",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "1a4a0567-8310-42ee-b932-deaebaf3a482",
+            "name": "Add expense",
+            "url": "http://localhost:5000/api/expense/addexpense",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-07-21T12:36:01.370Z",
+            "modified": "2025-07-21T12:41:28.495Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WSVJKSnNLZnZUY2hqUXJSQmYifSwiaWF0IjoxNzUyOTQ5NjIwfQ.GMpFiMDimO792rIQ4oFXfuncLPvulaX1pz0jhhl1XIU"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Buy new plants\",\n  \"amount\": \"2500\",\n  \"budget\": \"Garden\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "562f5d1a-3b01-43e6-828d-c40a6281c397",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "1a4a0567-8310-42ee-b932-deaebaf3a482",
+            "name": "Fetch expense",
+            "url": "http://localhost:5000/api/expense/fetchallexpenses",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2025-07-21T12:36:09.742Z",
+            "modified": "2025-07-23T12:40:21.875Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WT19PTDZJUGUySzhuYU1MVlEifSwiaWF0IjoxNzUyOTM1MDI5fQ.UKlNfo0PpxtHVeNQq3h9qk22hN2E16fqBVuFEjvttnU"
+                }
+            ]
+        },
+        {
+            "_id": "0a0f164e-914a-4530-95d0-21f8132a2978",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "1a4a0567-8310-42ee-b932-deaebaf3a482",
+            "name": "Fetch expense by budget",
+            "url": "http://localhost:5000/api/expense/fetchexpensebybudget/Garden1",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2025-07-21T12:36:22.732Z",
+            "modified": "2025-07-23T12:36:17.283Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WSVJKSnNLZnZUY2hqUXJSQmYifSwiaWF0IjoxNzUyOTQ5NjIwfQ.GMpFiMDimO792rIQ4oFXfuncLPvulaX1pz0jhhl1XIU"
+                }
+            ]
+        },
+        {
+            "_id": "f8612404-2da1-420a-ac8d-e8a4f00af890",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "d1c69a5b-bead-47ed-829f-a81c53f6b422",
+            "name": "Update budget",
+            "url": "http://localhost:5000/api/budget/updatebudget/-OVbG9f9XFxZm_yRGDLz",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2025-07-22T06:55:11.389Z",
+            "modified": "2025-07-22T16:35:49.446Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WSVJKSnNLZnZUY2hqUXJSQmYifSwiaWF0IjoxNzUyOTQ5NjIwfQ.GMpFiMDimO792rIQ4oFXfuncLPvulaX1pz0jhhl1XIU"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Garden123\",\n  \"amount\": \"80000\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d9065b05-cd3f-47e7-8559-de520c336a25",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "d1c69a5b-bead-47ed-829f-a81c53f6b422",
+            "name": "Delete budget",
+            "url": "http://localhost:5000/api/budget/deletebudget/-OVbG9f9XFxZm_yRGDLz",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2025-07-22T07:15:46.193Z",
+            "modified": "2025-07-23T09:45:01.987Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WT19PTDZJUGUySzhuYU1MVlEifSwiaWF0IjoxNzUyOTM1MDI5fQ.UKlNfo0PpxtHVeNQq3h9qk22hN2E16fqBVuFEjvttnU"
+                }
+            ]
+        },
+        {
+            "_id": "9cebea91-1877-4a99-8751-bfe677c5b86a",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "1a4a0567-8310-42ee-b932-deaebaf3a482",
+            "name": "Delete expense",
+            "url": "http://localhost:5000/api/expense/deleteexpense/-OVrF83QFwNyrWy7Z3LB",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2025-07-23T12:35:28.856Z",
+            "modified": "2025-07-23T12:41:44.838Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WT19PTDZJUGUySzhuYU1MVlEifSwiaWF0IjoxNzUyOTM1MDI5fQ.UKlNfo0PpxtHVeNQq3h9qk22hN2E16fqBVuFEjvttnU"
+                }
+            ]
+        },
+        {
+            "_id": "04fafc3d-c169-46d9-bb95-7eba6e0e0465",
+            "colId": "3a924c56-443e-461a-ba60-befa166f5a64",
+            "containerId": "bf5ce8fc-9d09-48dc-b939-72b0addba648",
+            "name": "Get username",
+            "url": "http://localhost:5000/api/auth/getuser",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2025-07-23T15:00:16.308Z",
+            "modified": "2025-07-23T15:00:59.136Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiLU9WT19PTDZJUGUySzhuYU1MVlEifSwiaWF0IjoxNzUyOTM1MDI5fQ.UKlNfo0PpxtHVeNQq3h9qk22hN2E16fqBVuFEjvttnU"
+                }
+            ]
+        }
+    ],
+    "ref": "tnBeibvSbvpQ9W1NAykGtPykAH7eB35BHqhRN2p7q4OxgYz6HDPO7pbqwrPNtiIGb5T-IdDt33TRFFNCKC5eRg"
+}
