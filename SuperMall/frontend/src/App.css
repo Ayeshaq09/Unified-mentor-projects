@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --main-color: #ec8948;
+  --border-color: #80808052;
+  --bg-color: rgba(45, 43, 43, 0.514);
+  --white-color: #fff;
+  --black-color: #000;
+  --box-shadow: #b6a9a9;
+  --box-shadow1: #80808024;
+  --selected-item-color: #bb0c033d;
+  --btn-bg-color: #ededed;
+  --row-color: #80808066;
+  --edit-btn: blue;
+  --del-btn: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", Verdana, Geneva;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.floating-label {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  transition: top 0.3s ease-out, color 0.3s ease-out;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 40px;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid var(--border-color);
+  font-size: 17px;
+}
+
+.input:focus {
+  border-bottom: 3px solid var(--main-color);
+}
+
+.input:focus ~ .floating-label,
+.input:not(:focus):valid ~ .floating-label {
+  top: -12px;
+  color: var(--main-color);
+}
+
+.btn {
+  width: 40%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.btn:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.cancel-icon {
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  text-align: right;
+}

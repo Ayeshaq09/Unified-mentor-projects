@@ -1,0 +1,81 @@
+.compare-products-details-container {
+  width: 100%;
+  border: 1px solid var(--black-color);
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.compare-products-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+}
+
+.product1-heading,
+.product2-heading {
+  height: 40px;
+  color: var(--white-color);
+  font-size: 30px;
+  font-weight: bolder;
+  flex: 1;
+  text-align: center;
+}
+
+.compare-products-container h2 {
+  cursor: pointer;
+}
+
+.product-name-heading,
+.product-price-heading,
+.product-offer-price-heading,
+.cproduct-desc-heading,
+.product-brand-heading,
+.product-category-heading,
+.product-shop-details-heading {
+  padding: 10px;
+  text-decoration: underline;
+}
+
+.compare-products-name,
+.compare-products-price,
+.compare-products-offer-price,
+.compare-products-brand,
+.compare-products-category,
+.compare-products-desc,
+.compare-product-shopname,
+.compare-product-shop-floor,
+.compare-product-shop-mobile {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--black-color);
+}
+
+.compare-products-desc {
+  text-align: left;
+}
+
+.product1-name,
+.product2-name,
+.product1-price,
+.product2-price,
+.product1-offer-price,
+.product2-offer-price,
+.product1-brand,
+.product2-brand,
+.product1-category,
+.product2-category,
+.product1-desc,
+.product2-desc,
+.product1-shop-shopname,
+.product2-shop-shopname,
+.product1-shop-floor,
+.product2-shop-floor,
+.product1-shop-mobile,
+.product2-shop-mobile {
+  padding: 10px 20px;
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}

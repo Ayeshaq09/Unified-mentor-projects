@@ -1,0 +1,82 @@
+.manage-container {
+  width: 100%;
+  height: 80vh;
+  margin: 0px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.table-container {
+  overflow: auto;
+  width: 100%;
+  height: 450px;
+  box-shadow: 0px 0px 15px 13px var(--box-shadow1);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container table tr {
+  height: 50px;
+}
+
+.table-container table td {
+  max-width: 150px;
+  padding: 0px 10px;
+}
+
+.table-container table tr:nth-child(even) {
+  background: var(--row-color);
+}
+
+.upload-btn {
+  width: 60px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: var(--main-color);
+  color: var(--white-color);
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  width: 60px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: var(--edit-btn);
+  color: var(--white-color);
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.del-btn {
+  width: 60px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: var(--del-btn);
+  color: var(--white-color);
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-desc-col {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.add-btn {
+  margin-bottom: 20px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

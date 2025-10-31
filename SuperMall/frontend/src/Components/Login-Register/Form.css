@@ -1,0 +1,64 @@
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(var(--bg-color)), url("../../Images/Mall bg.jpeg");
+}
+
+.login-form, .register-form {
+  width: 80%;
+}
+
+.form-container {
+  background: var(--white-color);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 380px;
+  width: 450px;
+  border-radius: 3px;
+}
+
+.register-container{
+  height: 450px;
+}
+
+.form-heading {
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: var(--main-color);
+}
+
+.input-container {
+  position: relative;
+}
+
+.redirect{
+  margin: 20px 0px;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .form-container {
+    width: 94%;
+  }
+
+  .form-heading{
+    font-size: 30px;
+  }
+
+  .form-input{
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,13 @@
+.add-products-container{
+    width: 500px;
+    margin: 0px auto;
+}
+
+.btn-container{
+    display: flex;
+    gap: 10px;
+}
+
+.login-form input:last-child{
+    border-bottom: none;
+}
