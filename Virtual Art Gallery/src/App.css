@@ -1,0 +1,21 @@
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+:root{
+  --main-color: #00306b;
+  --text-color: #000;
+  --text-color1: #fff;
+  --modal-wrapper: rgba(0, 0, 0, 0.83);
+  --body-color: linear-gradient(to bottom, #00306b, #081e39, #000000);
+  --button-box-shadow: 0px 0px 20px 16px #8196abe8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--body-color);
+}
