@@ -1,0 +1,32 @@
+.email-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Setting-heading {
+  margin-top: 30px;
+}
+
+.settings-btn {
+  margin-top: 30px;
+  width: 150px;
+}
+
+.form-control-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 320px;
+}
+
+.setting-input {
+  margin-top: 0px;
+  width: 230px;
+}
+
+.setting-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-color);
+}

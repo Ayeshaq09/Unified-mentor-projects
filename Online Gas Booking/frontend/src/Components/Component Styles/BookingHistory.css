@@ -1,0 +1,62 @@
+.bookings-container {
+  overflow: auto;
+  height: 90%;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.booking-card {
+  display: flex;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 30px 20px;
+  box-shadow: 0px 0px 8px 1px var(--box-shadow-color1);
+}
+
+.booking-details {
+  flex: 3;
+}
+
+.booking-cancel {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+}
+
+.cancel-btn,
+.edit-btn {
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.edit-btn {
+  margin-right: 10px;
+}
+
+.cancel-btn:hover,
+.edit-btn:hover {
+  background-color: var(--darkgray-color1);
+  color: var(--text-color1);
+}
+
+.booking-edit-icon,
+.booking-del-icon {
+  margin-left: 5px;
+}
+
+.no-records {
+  margin: 20px auto;
+  color: var(--text-color);
+  font-size: 20px;
+  text-align: center;
+}
+
+.booking-status {
+  display: flex;
+  align-items: center;
+}

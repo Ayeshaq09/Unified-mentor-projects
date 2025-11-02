@@ -1,0 +1,12 @@
+.addbooking-container{
+    text-align: center;
+    width: 700px;
+}
+
+.booking-input{
+    width: 60%;
+}
+
+.addbooking-btn{
+    width: 49%;
+}
