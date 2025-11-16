@@ -20,7 +20,7 @@ JSON dataset
 
 Clone the repository
 
-Run 'npm init' in vscode terminal to install all the required packages.
+Run 'npm install' in vscode terminal to install all the required packages.
 
 Then run 'npm start' to start the project in browser.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

@@ -53,22 +53,22 @@ const Modal = (props) => {
               value={credentials.name}
               onChange={onChange}
             />
-            <i className="bi bi-person"></i>
+            <i className="bi bi-person input-icon"></i>
 
             <input
               type="email"
               placeholder="Email address"
-              className="input cust-modal-input"
+              className="input modal-input"
               name="email"
               value={credentials.email}
               onChange={onChange}
             />
-            <i className="bi bi-envelope"></i>
+            <i className="bi bi-envelope input-icon"></i>
 
             <div className="modal-btns">
               <button
                 type="reset"
-                className="btn cust-modal-btn"
+                className="btn modal-btn"
                 onClick={handleReset}
               >
                 Reset

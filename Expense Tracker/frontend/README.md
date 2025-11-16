@@ -26,8 +26,9 @@ The app is mobile-responsive and is user-friendly.
 **Setup Instructions**
 
 Clone the repository
-Run 'cd frontend' in terminal.
-Then, run 'npm start both' in vscode terminal to start the app and open the "Available on" links mentioned in terminal after you run the command, 
+Run 'cd frontend' and then 'npm install' in terminal.
+Then, run 'cd..', 'cd backend' and then 'npm install' in terminal.
+Then, run 'npm run both' in vscode terminal to start the app and open the "Available on" links mentioned in terminal after you run the command, 
 eg:- (http://localhost:3000)
 
 **How to use the project**
